@@ -1,4 +1,3 @@
-import json
 import os
 from os.path import dirname, join
 
@@ -9,9 +8,10 @@ load_dotenv(verbose=True)
 dotenv_path = join(dirname(__file__), ".env")
 load_dotenv(dotenv_path)
 
-class Auth():
+class Auth:
     def __init__(self) -> None:
         self.refresh_token = os.environ.get("REFRESH_TOKEN")
+        self.open_ai_key = os.environ.get("OPENAI_API_KEY")
         self.access_token = ""
         self.uuid = ""
         self.api = ApiQuery()
@@ -24,9 +24,9 @@ class Auth():
         req_header = {
             'Content-Type': 'application/json',
         }
-        req_data = json.dumps({
+        req_data = {
         'refresh_token': self.refresh_token
-        })
+        }
         body = self.api.post(data=req_data, end_point=end_point, headers=req_header)
         if body != {}:
             return body["access_token"]
@@ -38,7 +38,7 @@ class Auth():
         header = {
             'Authorization': 'Bearer ' + self.access_token
         }
-        body = self.api.request(end_point=end_point, headers=header)
+        body = self.api.get(end_point=end_point, headers=header)
         if body != {}:
             return body["rooms"][0]["uuid"]
             
