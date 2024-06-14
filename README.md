@@ -27,6 +27,12 @@
 
 4. 必要なパッケージをインストールする
 
-   ```zsh
+   ``` zsh
    pip install -r require.txt
+   ```
+
+5. `main.py`を動かす
+
+   ``` zsh
+   python main.py
    ```
