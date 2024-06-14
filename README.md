@@ -11,7 +11,22 @@
     ```
 
 3. ターミナル内で以下のコマンドを動かす
+    - Mac, Linux
 
-    ```zsh
-
+    ``` zsh
+    python3 -m venv .venv
+    . .venv/bin/activate
     ```
+
+    - Windows
+
+    ``` powershell
+    python -m venv .venv
+    venv\Scripts\activate
+    ```
+
+4. 必要なパッケージをインストールする
+
+   ```zsh
+   pip install -r require.txt
+   ```
