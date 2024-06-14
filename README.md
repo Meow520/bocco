@@ -22,7 +22,7 @@
 
     ``` powershell
     python -m venv .venv
-    venv\Scripts\activate
+    .venv\Scripts\activate
     ```
 
 4. 必要なパッケージをインストールする
