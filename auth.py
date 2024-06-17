@@ -11,7 +11,6 @@ load_dotenv(dotenv_path)
 class Auth:
     def __init__(self) -> None:
         self.refresh_token = os.environ.get("REFRESH_TOKEN")
-        self.open_ai_key = os.environ.get("OPENAI_API_KEY")
         self.access_token = ""
         self.uuid = ""
         self.api = ApiQuery()
