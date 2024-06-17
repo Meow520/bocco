@@ -1,25 +1,47 @@
 import time
-
+import os
+import openai
+from typing import Tuple
 from auth import Auth
-from talk import Talk
+from bocco_tools import BoccoTools
+
+def gene_text(text:str, prompts:list) -> Tuple[str, list]:
+    model = "gpt-4-turbo"
+    if len(prompts) == 0:
+        default_prompt = [
+        {'role': 'system', 'content': 'あなたはユーザーの雑談相手です。'},
+        {'role': 'system', 'content': '返事は短めに一文までにしてください。'}
+        ]
+        prompts = default_prompt
+    prompts.append({'role': 'user', 'content': text})
+    openai.api_key = os.environ.get("OPENAI_API_KEY")
+    response = openai.chat.completions.create(
+        model=model,
+        messages=prompts
+    )
+    message = response.choices[0].message.content
+    prompts.append({'role':'assistant', 'content':message})
+    return message, prompts
 
 def main():
     # 初期設定（トークンの取得）
     auth = Auth()
     auth.update_token()
-    talk = Talk(uuid=auth.uuid, access_token=auth.access_token, openai_key=auth.open_ai_key)
+    tools = BoccoTools(uuid=auth.uuid, access_token=auth.access_token)
+    
+    # 会話
     prompts = []
-    text = ""
+    prev_text = ""
     while True:
-        got_text = talk.get_speech()
-        if got_text == "" or got_text == text:
+        text = tools.get_speech()
+        if text == "" or text == prev_text:
             print("please talk to emo")
-            time.sleep(5)
+            time.sleep(6)
             continue
-        if got_text != text:
-            res, prompts = talk.gene_text(text=text, prompts=prompts)
-            talk.send_speech(res)
-            text = got_text
+        if text != prev_text:
+            res, prompts = gene_text(text=text, prompts=prompts)
+            tools.send_speech(res)
+            text = prev_text
     
 if __name__ == "__main__":
     main()

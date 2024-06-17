@@ -17,6 +17,9 @@ class ApiQuery:
             with urllib.request.urlopen(req, context=self.ctx) as res:
                 body = json.loads(res.read())
                 return body
+        except urllib.error.HTTPError as e:
+            print(e.code)
+            return {}
         except urllib.error.URLError as e:
             print(e.reason)
             return {}
@@ -29,6 +32,24 @@ class ApiQuery:
             with urllib.request.urlopen(req, context=self.ctx) as res:
                 body = json.loads(res.read())
                 return body
+        except urllib.error.HTTPError as e:
+            print(e.code)
+            return {}
+        except urllib.error.URLError as e:
+            print(e.reason)
+            return {}
+        
+    def put(self, data:dict, end_point:str, headers:dict) -> dict:
+        url = self.base_url + end_point
+        req_data = json.dumps(data)
+        req = urllib.request.Request(url=url, headers=headers, data = req_data.encode(), method="PUT")
+        try:
+            with urllib.request.urlopen(req, context=self.ctx) as res:
+                body = json.loads(res.read())
+                return body
+        except urllib.error.HTTPError as e:
+            print(e.code)
+            return {}
         except urllib.error.URLError as e:
             print(e.reason)
             return {}
