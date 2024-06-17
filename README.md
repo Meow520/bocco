@@ -1,4 +1,4 @@
-# Bocco-emo開発(雑談)
+# Bocco-emo
 
 ## 環境構築
 
