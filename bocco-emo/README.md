@@ -13,7 +13,7 @@
 
     ``` zsh
     REFRESH_TOKEN=hoge
-    OPEN_AI_KEY=hoge
+    OPENAI_API_KEY=hoge
     ```
 
 4. ターミナル内で以下のコマンドを動かす
