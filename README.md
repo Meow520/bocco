@@ -1,20 +1,38 @@
 # Bocco-emoﾁｬﾝ
 
 ## gitでの開発
+
 簡単なコマンドライン例
+
 1. ファイルをコミットするところにAddする
-    ``` zsh 
+
+    ``` zsh
     git add .
     ```
+
 2. コミットメッセージをつけてコミットする
-    ``` zsh 
+
+    ``` zsh
     git commit -m "message"
     ```
+
 3. ブランチを切る
+
     ``` zsh
     git switch -c new-branch-name
     ```
+
 4. ローカルからサーバーにプッシュする
-    ``` zsh 
+
+    ``` zsh
     git push origin branch-name
     ```
+
+5. サーバーからローカルにプルする
+
+    ``` zsh
+    git pull origin branch-name
+    ```
+
+> [!WARNING]
+> pushするときは、**`/bocco-emo`または`/speaking-test`に入ってから**行ってください！

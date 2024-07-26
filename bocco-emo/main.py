@@ -36,12 +36,12 @@ def main():
         text = tools.get_speech()
         if text == "" or text == prev_text:
             print("please talk to emo")
-            time.sleep(6)
             continue
         if text != prev_text:
             res, prompts = gene_text(text=text, prompts=prompts)
             tools.send_speech(res)
             text = prev_text
+        time.sleep(6)
     
 if __name__ == "__main__":
     main()
