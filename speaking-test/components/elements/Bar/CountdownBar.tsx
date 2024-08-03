@@ -18,7 +18,7 @@ export const CountdownBar: FC<BarProps> = ({ status, timeLimit, isExplanation, n
   useEffect(() => {
     if (totalSeconds === 0) {
       if (nextPath) {
-        // router.push(nextPath);
+        router.push(nextPath);
       }
     }
   }, [nextPath, router, totalSeconds]);
