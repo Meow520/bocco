@@ -12,7 +12,7 @@ const Home = () => {
         </div>
         <div className="py-28 flex">
           <div className="mx-auto">
-            <LinkButton label="start" color="bg-gray-300" size="bg" path="/explanation/1" />
+            <LinkButton label="start" color="bg-gray-300 hover:bg-gray-200" size="bg" path="/explanation/1" />
           </div>
         </div>
       </div>
