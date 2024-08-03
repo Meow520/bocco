@@ -42,3 +42,13 @@
    ``` zsh
    python main.py
    ```
+
+## 開発手順
+
+### Boccoの機能周り
+
+1. 使用する機能に関わるAPIをBoccoの開発ドキュメントから確認
+2. エンドポイントとヘッダー、データ（POST/PUT）を確認
+3. `api_query.py`で必要な変数周りの確認
+4. `bocco_tools.py`に実装
+5. `main.py`で導入して動作確認

@@ -1,3 +1,4 @@
+# Sotaで言うところのRobotToolsの部分です
 from api_query import ApiQuery
 
 import datetime
@@ -9,6 +10,7 @@ class BoccoTools:
         self.api = ApiQuery()
         self.message = {}
         
+    # 音声認識
     def get_speech(self) -> str:
         end_point = "/v1/rooms/"+self.uuid+"/messages"
         header = {
@@ -31,6 +33,7 @@ class BoccoTools:
                 return item["message"]["ja"]
         return ""
     
+    # 発話
     def send_speech(self, text:str) -> None:
         end_point = "/v1/rooms/"+self.uuid+"/messages/text"
         header = {
@@ -46,6 +49,7 @@ class BoccoTools:
             print(body)
             
         
+    # 録音開始（未検証）
     def start_rec(self) -> None:
         end_point = "/v1/webhook/events"
         data = {
@@ -61,6 +65,7 @@ class BoccoTools:
         if body != {}:
             print(body)
             
+    # 録音停止（未検証）
     def stop_rec(self) -> None:
         end_point = "/v1/webhook/events"
         data = {

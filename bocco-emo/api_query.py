@@ -1,3 +1,4 @@
+# APIのやり取り
 import urllib.error
 import certifi
 import json
@@ -10,6 +11,7 @@ class ApiQuery:
         self.base_url = "https://platform-api.bocco.me"
         self.ctx = ssl.create_default_context(cafile=certifi.where())
     
+    # GET
     def get(self, end_point:str, headers:dict) -> dict:
         url = self.base_url + end_point
         req = urllib.request.Request(url=url, headers=headers, method="GET")
@@ -24,6 +26,7 @@ class ApiQuery:
             print(e.reason)
             return {}
     
+    # POST
     def post(self, data:dict, end_point:str, headers:dict) -> dict:
         url = self.base_url + end_point
         req_data = json.dumps(data)
@@ -38,7 +41,8 @@ class ApiQuery:
         except urllib.error.URLError as e:
             print(e.reason)
             return {}
-        
+    
+    #　PUT 
     def put(self, data:dict, end_point:str, headers:dict) -> dict:
         url = self.base_url + end_point
         req_data = json.dumps(data)

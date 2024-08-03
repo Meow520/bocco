@@ -1,3 +1,4 @@
+# auth周り
 import os
 from os.path import dirname, join
 
@@ -15,6 +16,7 @@ class Auth:
         self.uuid = ""
         self.api = ApiQuery()
 
+    # アクセストークン取得
     def _get_access_token(self) -> str:
         if self.refresh_token == "":
             print("Failed, please set 'REFRESH_TOKEN' on the `.env` file")
@@ -30,6 +32,7 @@ class Auth:
         if body != {}:
             return body["access_token"]
             
+    # uuid取得
     def _get_uuid(self) -> str:
         if self.access_token == "":
             self.access_token = self._get_access_token()
@@ -40,7 +43,8 @@ class Auth:
         body = self.api.get(end_point=end_point, headers=header)
         if body != {}:
             return body["rooms"][0]["uuid"]
-            
+    
+    # アクセストークンのアップデート
     def update_token(self):
         self.access_token = self._get_access_token()
         self.uuid = self._get_uuid()
