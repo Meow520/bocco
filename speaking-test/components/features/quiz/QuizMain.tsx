@@ -43,6 +43,7 @@ export const QuizMain: FC<QuizMainProps> = ({ quiz, status }) => {
         <div>
           <Image
             src={`/images/${quiz.image.path}`}
+            priority
             width={quiz.image.width}
             height={quiz.image.height}
             alt="picture"
