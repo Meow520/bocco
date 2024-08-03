@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "category": 1,
+      "quiz": "It' been a long time. How have you been?",
+      "time": 10,
+      "next": "2/thinking"
+    },
+    {
+      "id": "2",
+      "category": 1,
+      "quiz": "What is your favorite artist?",
+      "time": 15,
+      "thinking": 5,
+      "image": {
+        "path": "2.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "explanation"
+    }
+  ]
+}
