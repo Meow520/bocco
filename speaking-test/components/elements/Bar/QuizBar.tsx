@@ -27,6 +27,6 @@ export const QuizBar: FC<QuizBarProps> = ({ currentNum }) => {
 };
 
 // クイズバー（問題の進捗を表すバー）
-// <Button
+// <QuizBar
 // currentNum = {1} (1 or 2 or 3)
 // />
