@@ -5,10 +5,20 @@
       "category": 1,
       "quiz": "It' been a long time. How have you been?",
       "time": 10,
-      "next": "2/thinking"
+      "next": "2/playing"
     },
     {
       "id": "2",
+      "category": 1,
+      "time": 15,
+      "audio": {
+        "audioPath": "sample.mp3",
+        "duration": 3
+      },
+      "next": "3/thinking"
+    },
+    {
+      "id": "3",
       "category": 1,
       "quiz": "What is your favorite artist?",
       "time": 15,

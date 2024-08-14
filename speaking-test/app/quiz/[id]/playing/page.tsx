@@ -13,7 +13,7 @@ const Quiz: NextPage<QuizProps> = ({ params }) => {
   const quiz = data["data"].filter((data) => data.id === params.id)[0];
   return (
     <div className="h-screen">
-      <QuizMain quiz={quiz} status="thinking" />
+      <QuizMain quiz={quiz} status="playing" />
     </div>
   );
 };
