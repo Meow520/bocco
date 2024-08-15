@@ -7,13 +7,13 @@ import { LinkButton } from "@/components/elements/Button/LinkButton";
 export const ExplanationMain = () => {
 
   return (
-    <div className="h-full">
+    <div className="">
       <div className="w-full">
-        <p className="text-4xl text-center">例題:</p>
+        <p className="text-xl text-center">例題:</p>
         {/* mx-auto: marginの横方向をautoにする→Image使った時に写真が中央に行くよ */}
         {/* py-4:paddingを縦方向に4（16px）入れる */}
-        <Image src={"/images/2.png"} alt="picture" width={480} height={360} priority className="mx-auto py-4"/>
-        <p className="text-4xl text-center">It&apos;s been a long time. How have you been?</p>
+        <Image src={"/images/2.png"} alt="picture" width={400} height={300} priority className="mx-auto py-4"/>
+        <p className="text-2xl text-center">It&apos;s been a long time. How have you been?</p>
       </div>
 
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-60">
