@@ -3,7 +3,7 @@
 import { NextPage } from "next";
 import React from "react";
 import { QuizMain } from "@/components/features/quiz/QuizMain";
-import data from "@/data/quiz.json";
+import data from "@/data/quiz1.json";
 
 type QuizProps = {
   params: { id: string };
