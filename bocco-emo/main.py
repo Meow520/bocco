@@ -6,7 +6,7 @@ from auth import Auth
 from bocco_tools import BoccoTools
 
 def gene_text(text:str, prompts:list) -> Tuple[str, list]:
-    model = "gpt-4-turbo"
+    model = "gpt-4o-mini"
     if len(prompts) == 0:
         default_prompt = [
         {'role': 'system', 'content': 'あなたはユーザーの雑談相手です。'},
@@ -36,13 +36,13 @@ def main():
         text = tools.get_speech()
         if text == "" or text == prev_text:
             print("please talk to emo")
-            time.sleep(6)
+            time.sleep(7)
             continue
         if text != prev_text:
             res, prompts = gene_text(text=text, prompts=prompts)
             tools.send_speech(res)
-            text = prev_text
-        time.sleep(6)
+            prev_text = text
+        time.sleep(7)
     
 if __name__ == "__main__":
     main()
