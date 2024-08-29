@@ -68,9 +68,96 @@
       "category": 1,
       "quiz": "I asked her out to dinner tomorrow.",
       "time": 10,
-      "next": "2/thinking"
+      "next": "11/thinking"
     },
-
+    {
+      "id": "11",
+      "category": 1,
+      "quiz": "Cognitive dissonace occurs when an individual experiences discomfort due to holding two conflicting beliefs or values simultaneously.",
+      "time": 10,
+      "next": "12/thinking"
+    },
+    {
+      "id": "12",
+      "category": 1,
+      "quiz": "Constructivist learning theory suggests that students actively construct their own understanding and knowledge of the world through experiences and reflecting on those experiences. ",
+      "time": 10,
+      "next": "13/thinking"
+    },
+    {
+      "id": "13",
+      "category": 1,
+      "quiz": "The photoelectric effect occurs when light shines on a material and ejects electrons from its surface, demonstrating the particle-like properties of light.  ",
+      "time": 10,
+      "next": "14/thinking"
+    },
+    {
+      "id": "14",
+      "category": 1,
+      "quiz": "Hypertension is a chronic medical condition where the blood pressure in the arteries is persistently elevated, increasing the risk of heart disease and stroke. ",
+      "time": 10,
+      "next": "15/thinking"
+    },
+    {
+      "id": "15",
+      "category": 1,
+      "quiz": "Allegory is a literary device where characters and events represent abstract ideas or moral qualities, often conveying a deeper meaning beyond the literal narrative. ",
+      "time": 10,
+      "next": "16/thinking"
+    },
+    {
+      "id": "16",
+      "category": 2,
+      "quiz": "どんなことをするのが好きですか？と聞かれた",
+      "time": 15,
+      "thinking": 5,
+      "image": {
+        "path": "2-16.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "17/thinking"
+    },
+    {
+      "id": "17",
+      "category": 2,
+      "quiz": "相手のことをもっと知りたい。趣味を尋ねてみよう。",
+      "time": 15,
+      "thinking": 5,
+      "image": {
+        "path": "2-17.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "18/thinking"
+    },
+    {
+      "id": "18",
+      "category": 2,
+      "quiz": "先日知り合った人と再会。「また会えましたね」と言われた。",
+      "time": 15,
+      "thinking": 5,
+      "image": {
+        "path": "2.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "19/thinking"
+    },
+    {
+      "id": "19",
+      "category": 2,
+      "quiz": "この料理はあんまり上手くできなかった",
+      "time": 15,
+      "thinking": 5,
+      "image": {
+        "path": "2.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "17/thinking"
+    },
+    
     {
       "id": "2",
       "category": 2,
