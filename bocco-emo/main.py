@@ -1,48 +1,59 @@
-import time
-import os
-import openai
-from typing import Tuple
-from auth import Auth
+import http.server
+import json
 from bocco_tools import BoccoTools
+from entity import Webhook
 
-def gene_text(text:str, prompts:list) -> Tuple[str, list]:
-    model = "gpt-4o-mini"
-    if len(prompts) == 0:
-        default_prompt = [
-        {'role': 'system', 'content': 'あなたはユーザーの雑談相手です。'},
-        {'role': 'system', 'content': '返事は短めに一文までにしてください。'}
-        ]
-        prompts = default_prompt
-    prompts.append({'role': 'user', 'content': text})
-    openai.api_key = os.environ.get("OPENAI_API_KEY")
-    response = openai.chat.completions.create(
-        model=model,
-        messages=prompts
-    )
-    message = response.choices[0].message.content
-    prompts.append({'role':'assistant', 'content':message})
-    return message, prompts
+tools = BoccoTools()
+prompt: list = []
 
-def main():
-    # 初期設定（トークンの取得）
-    auth = Auth()
-    auth.update_token()
-    tools = BoccoTools(uuid=auth.uuid, access_token=auth.access_token)
-    
-    # 会話
-    prompts = []
-    prev_text = ""
-    while True:
-        text = tools.get_speech()
-        if text == "" or text == prev_text:
-            print("please talk to emo")
-            time.sleep(8)
-            continue
-        if text != prev_text:
-            res, prompts = gene_text(text=text, prompts=prompts)
-            tools.send_speech(res)
-            prev_text = text
-        time.sleep(8)
-    
-if __name__ == "__main__":
-    main()
+# Webhookの受け取り先を指定する（WebhookURLにngrokでのサーバー立ち上げ時に出るFowardingの欄の矢印の元のURLを貼り付ける）
+tools.set_webhook(Webhook("WebhookURL"))
+
+# メッセージを受け取った時（アプリの部屋で何らかのメッセージが投稿された時）に下のmessage_callbackが発火
+@tools.event("message.received")
+def message_callback(data):
+    global prompt
+    # メッセージの送信者のuser_typeで判別（send_speechもメッセージの投稿となるが、emoで受け取った時とはuser_typeが異なるため）
+    if data.data.message.user.user_type == "emo":
+        # ユーザーの発話データ取得
+        user_speech = data.data.message.message.ja
+        # 返答生成
+        response, prompt = tools.gene_text(text=user_speech, prompts=prompt)
+        tools.send_speech(response)
+    else:
+        # print("plain message received")
+        pass
+
+# セキュリティ上の問題が起きないためにsecret_keyを作成
+secret_key = tools.start_webhook_event()
+
+# localserverを立ち上げる
+class Handler(http.server.BaseHTTPRequestHandler):
+    def _send_status(self, status):
+        self.send_response(status)
+        self.send_header("Content-type", "text/plain; charset=utf-8")
+        self.end_headers()
+
+    def do_POST(self):
+        # check secret_key
+        if not secret_key == self.headers["X-Platform-Api-Secret"]:
+            self._send_status(401)
+            return
+
+        content_len = int(self.headers["content-length"])
+        request_body = json.loads(self.rfile.read(content_len).decode("utf-8"))
+
+        try:
+            # ここでイベント発火時のCallback関数を受け取る
+            cb_func, emo_webhook_body = tools.get_cb_func(request_body)
+        except Exception:
+            self._send_status(501)
+            return
+
+        cb_func(emo_webhook_body)
+
+        self._send_status(200)
+
+# サーバー立ち上げ（ポート番号はngrokのサーバー立ち上げ時のポートと同一にする）
+with http.server.HTTPServer(("", 8080), Handler) as httpd:
+    httpd.serve_forever()

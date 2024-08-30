@@ -1,5 +1,15 @@
 # Bocco-emoﾁｬﾝ
 
+## 環境構築
+
+1. リポジトリをクローンする
+
+    ``` zsh
+    git clone https://github.com/social-robotics-lab/bocco-emo.git
+    ```
+
+2. その他はそれぞれのディレクトリで確認してください
+
 ## gitでの開発
 
 簡単なコマンドライン例

@@ -35,7 +35,7 @@ class Auth:
         if body != {}:
             return body["access_token"]
             
-    # uuid取得
+    # 部屋のuuid取得
     def _get_uuid(self) -> str:
         if self.access_token == "":
             self.access_token = self._get_access_token()
