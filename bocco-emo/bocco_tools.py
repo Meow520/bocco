@@ -80,12 +80,13 @@ class BoccoTools:
     # event取得        
     def event(self, event: str, room_id_list: List[str] = []) -> Callable:
         def decorator(func):
+            print(func)
             if event not in self._webhook_events_cb:
                 self._webhook_events_cb[event] = {}
 
             for room_id in room_id_list:
                 self._webhook_events_cb[event][room_id] = func
-
+            print(self._webhook_events_cb)
         return decorator
     
     def _register_webhook_event(self, events: List[str]) -> dict:
