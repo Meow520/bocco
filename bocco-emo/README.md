@@ -2,21 +2,16 @@
 
 ## 環境構築
 
-1. リポジトリをクローンする
+1. ルート配下に`.env` fileを作成する
 
-    ``` zsh
-    git clone https://github.com/social-robotics-lab/bocco-emo.git
-    ```
-
-2. ルート配下に`.env` fileを作成する
-3. `.env` file内に以下を追加する (hoge内には任意のキーやトークンを入れる)
+2. `.env` file内に以下を追加する (hoge内には任意のキーやトークンを入れる)
 
     ``` zsh
     REFRESH_TOKEN=hoge
     OPENAI_API_KEY=hoge
     ```
 
-4. ターミナル内で以下のコマンドを動かす
+3. ターミナル内で以下のコマンドを動かす
     - Mac, Linux
 
     ``` zsh
@@ -31,17 +26,43 @@
     .venv\Scripts\activate
     ```
 
+4. [ngrok](https://ngrok.com/)の設定をする
+   1. 上のリンクにアクセスしてSign Upをする（無料）
+   2. インストールする
+      - Mac
+
+       ``` zsh
+       brew install ngrok/ngrok/ngrok
+       ngrok config add-authtoken $TOKEN    # Dashboardのsetupのところにあるコマンドをそのままコピーする
+       ```
+
+       - Windows
+
+        ``` powershell
+        choco install ngrok    # chocoがなければFileを直接ダウンロードする
+        ngrok config add-authtoken $TOKEN    # Dashboardのsetupのところにあるコマンドをそのままコピーする
+        ```
+
 5. 必要なパッケージをインストールする
 
    ``` zsh
    pip install -r requirements.txt
    ```
 
-6. `main.py`を動かす
+6. ngrokでサーバーを立ち上げる
+
+   ``` zsh
+   ngrok http http://localhost:8080
+   ```
+
+7. `main.py`を動かす
 
    ``` zsh
    python main.py
    ```
+
+    > [!WARNING]
+    > WebhookのURLがFowardingしているURLに設定できているかチェック！
 
 ## 開発手順
 
