@@ -61,8 +61,8 @@
    python main.py
    ```
 
-    > [!WARNING]
-    > WebhookのURLがFowardingしているURLに設定できているかチェック！
+> [!WARNING]
+> WebhookのURLがFowardingしているURLに設定できているかチェック！
 
 ## 開発手順
 
