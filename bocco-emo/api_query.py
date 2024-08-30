@@ -20,11 +20,16 @@ class ApiQuery:
                 body = json.loads(res.read())
                 return body
         except urllib.error.HTTPError as e:
-            print(e.code)
-            return {}
+            print(f"GET HTTP ERROR CODE: {e.code}")
+            print(f"GET HTTP ERROR REASON: {e.reason}")
+            return {"error":e}
         except urllib.error.URLError as e:
-            print(e.reason)
-            return {}
+            print(f"GET URL ERROR CODE: {e.code}")
+            print(f"GET URL ERROR REASON: {e.reason}")
+            return {"error":e}
+        except Exception as e:
+            print(f"GET EXCEPTION ERROR: {e}")
+            return {"error":e}
     
     # POST
     def post(self, data:dict, end_point:str, headers:dict) -> dict:
@@ -36,11 +41,14 @@ class ApiQuery:
                 body = json.loads(res.read())
                 return body
         except urllib.error.HTTPError as e:
-            print(e.code)
-            return {}
+            print(f"POST HTTP ERROR CODE: {e.code}")
+            return {"error":e}
         except urllib.error.URLError as e:
-            print(e.reason)
-            return {}
+            print(f"POST URL ERROR REASON: {e.reason}")
+            return {"error":e}
+        except Exception as e:
+            print(f"POST EXCEPTION ERROR: {e}")
+            return {"error":e}
     
     #　PUT 
     def put(self, data:dict, end_point:str, headers:dict) -> dict:
@@ -52,8 +60,11 @@ class ApiQuery:
                 body = json.loads(res.read())
                 return body
         except urllib.error.HTTPError as e:
-            print(e.code)
-            return {}
+            print(f"PUT HTTP ERROR CODE: {e.code}")
+            return {"error":e}
         except urllib.error.URLError as e:
-            print(e.reason)
-            return {}
+            print(f"PUT URL ERROR REASON: {e.reason}")
+            return {"error":e}
+        except Exception as e:
+            print(f"PUT EXCEPTION ERROR: {e}")
+            return {"error":e}
