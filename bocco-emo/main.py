@@ -14,8 +14,8 @@ tools.set_webhook(Webhook("WebhookURL"))
 def rader_callback(data):
     # emoちゃんの近くに人がいる状態に変化した時に会話を開始（near_beginとbeginのどちらがいいかはわからないので、変えてみて試してください）
     if data.rader.near_bigin:
-        tools.post("こんにちは")
         print("start talking")
+        tools.post("こんにちは")
 
 # メッセージを受け取った時（アプリの部屋で何らかのメッセージが投稿された時）に下のmessage_callbackが発火
 @tools.event("message.received")
