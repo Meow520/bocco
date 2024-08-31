@@ -9,6 +9,14 @@ prompt: list = []
 # Webhookの受け取り先を指定する（WebhookURLにngrokでのサーバー立ち上げ時に出るFowardingの欄の矢印の元のURLを貼り付ける）
 tools.set_webhook(Webhook("WebhookURL"))
 
+# Boccoのレーダの状態が変化した時に下のrader_callbackが発火
+@tools.event("radar.detected")
+def rader_callback(data):
+    # emoちゃんの近くに人がいる状態に変化した時に会話を開始（near_beginとbeginのどちらがいいかはわからないので、変えてみて試してください）
+    if data.rader.near_bigin:
+        tools.post("こんにちは")
+        print("start talking")
+
 # メッセージを受け取った時（アプリの部屋で何らかのメッセージが投稿された時）に下のmessage_callbackが発火
 @tools.event("message.received")
 def message_callback(data):

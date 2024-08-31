@@ -95,7 +95,26 @@ class EmoTalk(PrintModel):
 class EmoWebhookEmoTalk(PrintModel):
     # BOCCO emoが発話した内容に関する情報
     emo_talk: EmoTalk
+
+# レーダセンサが検知したイベントの情報
+class EmoRadar(PrintModel):
+    # BOCCO emoの近くに人がいる時に、true が設定されます。
+    begin: bool
     
+    # BOCCO emoの近くから人が立ち去った時に、true が設定されます。
+    end: bool
+    
+    # BOCCO emoのすぐ近くに人がいる時に、true が設定されます。
+    near_begin: bool
+    
+    # BOCCO emoのすぐ近くから人が立ち去った時に、true が設定されます。
+    near_end: bool
+    
+# Webhookで受信した内蔵レーダーセンサイベントに関する情報
+class EmoWebhookRadar(PrintModel):
+    # レーダセンサが検知したイベントの情報
+    radar: EmoRadar
+        
 # 受信したWebhookの内容
 class WebhookBody(PrintModel):
     # リクエストの同一性を示す、一意の文字列
@@ -120,6 +139,7 @@ class WebhookBody(PrintModel):
     data: Union[
         EmoWebhookEmoTalk,
         EmoWebhookMessage,
+        EmoWebhookRadar,
         dict,
     ]
     
