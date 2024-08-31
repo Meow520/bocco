@@ -1,84 +1,78 @@
 # Sotaで言うところのRobotToolsの部分です
 import datetime
 import os
+from collections import deque
+from typing import Callable, Dict, List, Optional, Tuple
+
 import openai
-from entity import Webhook, WebhookInfo, WebhookBody
 from api_query import ApiQuery
 from auth import Auth
-from typing import Callable, Dict, List, NoReturn, Optional, Tuple, Union
-from collections import deque
+from entity import Webhook, WebhookBody, WebhookInfo
+
 
 class BoccoTools:
     _DEFAULT_ROOM_ID = ""
-    
+
     def __init__(self) -> None:
         self.auth = Auth()
         self.api = ApiQuery()
         self.message = {}
         self._webhook_events_cb: Dict[str, Dict[str, Callable]] = {}
         self._request_id_deque: deque = deque([], 10)
-        
+
     # 音声認識 (Webhookで代用できた。使わない可能性高)
     def get_speech(self) -> str:
         self.access_token, self.uuid = self.auth.check_expired()
-        end_point = "/v1/rooms/"+self.uuid+"/messages"
-        header = {
-            'Authorization': 'Bearer ' + self.access_token
-        }
+        end_point = "/v1/rooms/" + self.uuid + "/messages"
+        header = {"Authorization": "Bearer " + self.access_token}
         body = self.api.get(end_point=end_point, headers=header)
-        
-        if  "error" in body:
+
+        if "error" in body:
             return ""
 
         dt_now = datetime.datetime.now(datetime.timezone.utc)
-        date = int(dt_now.strftime('%Y%m%d%H%M%S')+"000") - 200000
+        date = int(dt_now.strftime("%Y%m%d%H%M%S") + "000") - 200000
         for item in body["messages"]:
             # print(item, date)
             if item["user"]["user_type"] == "emo":
                 if item["sequence"] < date:
                     print("No new message")
                     break
-                self.message =item
+                self.message = item
                 print("Got a new message")
                 return item["message"]["ja"]
         return ""
-    
+
     # 発話
-    def send_speech(self, text:str) -> None:
+    def send_speech(self, text: str) -> None:
         self.access_token, self.uuid = self.auth.check_expired()
-        end_point = "/v1/rooms/"+self.uuid+"/messages/text"
+        end_point = "/v1/rooms/" + self.uuid + "/messages/text"
         header = {
-            'Authorization': 'Bearer ' + self.access_token,
-            'Content-Type': 'application/json'
+            "Authorization": "Bearer " + self.access_token,
+            "Content-Type": "application/json",
         }
-        data = {
-            "text": text,
-            "immediate": True
-        }
+        data = {"text": text, "immediate": True}
         body = self.api.post(data=data, end_point=end_point, headers=header)
         if "error" in body:
             return
         print(f"POSTED: {body}")
-    
+
     # webhookの設定
-    def set_webhook(self, webhook:Webhook) -> Optional[WebhookInfo]:
+    def set_webhook(self, webhook: Webhook) -> Optional[WebhookInfo]:
         self.access_token, self.uuid = self.auth.check_expired()
         end_point = "/v1/webhook"
         header = {
-            'Authorization': 'Bearer ' + self.access_token,
-            'Content-Type': 'application/json'
+            "Authorization": "Bearer " + self.access_token,
+            "Content-Type": "application/json",
         }
-        data = {
-            "description": webhook.description,
-            "url": webhook.url
-        }
+        data = {"description": webhook.description, "url": webhook.url}
         body = self.api.post(data=data, end_point=end_point, headers=header)
         print(body)
         if "error" in body:
-            return 
+            return
         return WebhookInfo(**body)
-    
-    # eventに紐づいているCallback関数の取得（部屋のuuidごとに設定可能）        
+
+    # eventに紐づいているCallback関数の取得（部屋のuuidごとに設定可能）
     def event(self, event: str, room_id_list: List[str] = []) -> Callable:
         def decorator(func):
             if room_id_list == []:
@@ -87,32 +81,30 @@ class BoccoTools:
                 self._webhook_events_cb[event] = {}
             for room_id in room_id_list:
                 self._webhook_events_cb[event][room_id] = func
+
         return decorator
-    
+
     # webhookにeventを登録する
-    def _register_webhook_event(self, events: List[str]) -> dict:
+    def _register_webhook_event(self, events: List[str]) -> WebhookInfo:
         self.access_token, self.uuid = self.auth.check_expired()
         end_point = "/v1/webhook/events"
         header = {
-            'Authorization': 'Bearer ' + self.access_token,
-            'Content-Type': 'application/json'
+            "Authorization": "Bearer " + self.access_token,
+            "Content-Type": "application/json",
         }
-        data = {
-            "events": events
-        }
+        data = {"events": events}
         body = self.api.put(data=data, end_point=end_point, headers=header)
-        
-        if "error" in body:
-            return {"error": body["error"]}
         return WebhookInfo(**body)
-        
+
     # Webhookでのevent監視を始める（上の関数（_register_webhook_event）を実行しているだけ, 戻り値が違う）
     def start_webhook_event(self) -> str:
-        response = self._register_webhook_event(list(self._webhook_events_cb.keys()))
+        response: WebhookInfo = self._register_webhook_event(
+            list(self._webhook_events_cb.keys())
+        )
         return response.secret
 
     # イベントが発火した時にCallback関数とイベントで取得したデータをクラスにして返す
-    def get_cb_func(self, body: dict) -> Tuple[Callable, WebhookBody]:
+    def get_cb_func(self, body: dict) -> Tuple[Callable, WebhookBody]:  # type: ignore
         self.access_token, self.uuid = self.auth.check_expired()
         emo_webhook_body = WebhookBody(**body)
         if emo_webhook_body.request_id not in self._request_id_deque:
@@ -133,24 +125,18 @@ class BoccoTools:
         else:
             print("Webhook request id is duplicated")
 
-    
     # 発話テキスト生成
-    def gene_text(self, text:str, prompts:list) -> Tuple[str, list]:
+    def gene_text(self, text: str, prompts: list) -> Tuple[Optional[str], list]:
         model = "gpt-4o-mini"
         if len(prompts) == 0:
             default_prompt = [
-            {'role': 'system', 'content': 'あなたはユーザーの雑談相手です。'},
-            {'role': 'system', 'content': '返事は短めに一文までにしてください。'}
+                {"role": "system", "content": "あなたはユーザーの雑談相手です。"},
+                {"role": "system", "content": "返事は短めに一文までにしてください。"},
             ]
             prompts = default_prompt
-        prompts.append({'role': 'user', 'content': text})
+        prompts.append({"role": "user", "content": text})
         openai.api_key = os.environ.get("OPENAI_API_KEY")
-        response = openai.chat.completions.create(
-            model=model,
-            messages=prompts
-        )
-        message = response.choices[0].message.content
-        prompts.append({'role':'assistant', 'content':message})
+        response = openai.chat.completions.create(model=model, messages=prompts)
+        message: Optional[str] = response.choices[0].message.content
+        prompts.append({"role": "assistant", "content": message})
         return message, prompts
-        
-        

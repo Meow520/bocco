@@ -1,5 +1,6 @@
 import http.server
 import json
+
 from bocco_tools import BoccoTools
 from entity import Webhook
 
@@ -7,7 +8,8 @@ tools = BoccoTools()
 prompt: list = []
 
 # Webhookの受け取り先を指定する（WebhookURLにngrokでのサーバー立ち上げ時に出るFowardingの欄の矢印の元のURLを貼り付ける）
-tools.set_webhook(Webhook("WebhookURL"))
+tools.set_webhook(Webhook("webhook"))  # type: ignore
+
 
 # Boccoのレーダの状態が変化した時に下のrader_callbackが発火
 @tools.event("radar.detected")
@@ -15,7 +17,8 @@ def rader_callback(data):
     # emoちゃんの近くに人がいる状態に変化した時に会話を開始（near_beginとbeginのどちらがいいかはわからないので、変えてみて試してください）
     if data.rader.near_bigin:
         print("start talking")
-        tools.post("こんにちは")
+        tools.send_speech("こんにちは")
+
 
 # メッセージを受け取った時（アプリの部屋で何らかのメッセージが投稿された時）に下のmessage_callbackが発火
 @tools.event("message.received")
@@ -27,13 +30,16 @@ def message_callback(data):
         user_speech = data.data.message.message.ja
         # 返答生成
         response, prompt = tools.gene_text(text=user_speech, prompts=prompt)
-        tools.send_speech(response)
+        if response:
+            tools.send_speech(response)
     else:
         # print("plain message received")
         pass
 
+
 # セキュリティ上の問題が起きないためにsecret_keyを作成
 secret_key = tools.start_webhook_event()
+
 
 # localserverを立ち上げる
 class Handler(http.server.BaseHTTPRequestHandler):
@@ -61,6 +67,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
         cb_func(emo_webhook_body)
 
         self._send_status(200)
+
 
 # サーバー立ち上げ（ポート番号はngrokのサーバー立ち上げ時のポートと同一にする）
 with http.server.HTTPServer(("", 8080), Handler) as httpd:
