@@ -29,7 +29,7 @@ export const ExplanationMain = () => {
 
       <div className="absolute bottom-6 right-6">
           <div className="mr-0 ml-auto">
-            <LinkButton label="start test" color="bg-gray-300 hover:bg-gray-200" size="bg" path="/quiz/16" />
+            <LinkButton label="start test" color="bg-gray-300 hover:bg-gray-200" size="bg" path="/quiz/1" />
           </div>
 
       </div>
