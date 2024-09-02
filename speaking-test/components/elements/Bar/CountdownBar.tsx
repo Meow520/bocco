@@ -3,17 +3,20 @@
 import { useRouter } from "next/navigation";
 import React, { FC, useEffect } from "react";
 import { useTimer } from "react-timer-hook";
+import { TQuiz } from "@/types/type";
 
 type BarProps = {
   status: string;
   timeLimit: number;
   isExplanation?: boolean;
   nextPath?: string;
+  quiz?: TQuiz;
 };
 
-export const CountdownBar: FC<BarProps> = ({ status, timeLimit, isExplanation, nextPath }) => {
+export const CountdownBar: FC<BarProps> = ({ status, timeLimit, isExplanation, nextPath, quiz }) => {
   const { totalSeconds } = useTimer({ expiryTimestamp: new Date(new Date().getTime() + timeLimit * 1000) });
   const router = useRouter();
+  const logMessage = quiz ? `${status} ended: {CATEGORY: ${quiz.category}, QUIZ: ${quiz.id}}` : "";
 
   useEffect(() => {
     if (totalSeconds === 0) {
@@ -21,7 +24,7 @@ export const CountdownBar: FC<BarProps> = ({ status, timeLimit, isExplanation, n
         router.push(nextPath);
       }
     }
-  }, [nextPath, router, totalSeconds]);
+  }, [logMessage, nextPath, router, status, totalSeconds]);
 
   return (
     <div className="flex justify-center items-center h-40">

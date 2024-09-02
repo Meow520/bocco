@@ -4,6 +4,7 @@ import React from "react";
 import { LinkButton } from "@/components/elements/Button/LinkButton";
 
 const Home = () => {
+  console.log(`DATE: ${new Date().toLocaleString()}`)
   return (
     <main className="min-h-screen flex justify-center items-center">
       <div className="">
