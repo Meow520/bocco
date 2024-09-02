@@ -60,5 +60,5 @@ class Auth:
         if ut - self.update_timestamp >= 3600:
             new_access_token, new_uuid = self._update_token()
         else:
-            new_access_token, new_uuid = self.access_token, self._get_uuid()
+            new_access_token, new_uuid = self.access_token, self.uuid
         return new_access_token, new_uuid
