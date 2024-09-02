@@ -49,8 +49,9 @@ class Auth:
     def _update_token(self) -> Tuple[str, str]:
         new_access_token = self._get_access_token()
         self.access_token = new_access_token
-        new_uuid = self._get_uuid()
-        self.uuid = new_uuid
+        if self.uuid == "":
+            new_uuid = self._get_uuid()
+            self.uuid = new_uuid
         self.update_timestamp = time.time()
         return new_access_token, new_uuid
 
