@@ -3,28 +3,28 @@
 import { useRouter } from "next/navigation";
 import React, { FC, useEffect } from "react";
 import { useTimer } from "react-timer-hook";
-import { TQuiz } from "@/types/type";
+import { TLogs, TQuiz } from "@/types/type";
 
 type BarProps = {
   status: string;
   timeLimit: number;
-  isExplanation?: boolean;
-  nextPath?: string;
-  quiz?: TQuiz;
+  nextPath: string;
+  quiz: TQuiz;
+  logsData: TLogs
 };
 
-export const CountdownBar: FC<BarProps> = ({ status, timeLimit, isExplanation, nextPath, quiz }) => {
+export const CountdownBar: FC<BarProps> = ({ status, timeLimit, nextPath, logsData }) => {
   const { totalSeconds } = useTimer({ expiryTimestamp: new Date(new Date().getTime() + timeLimit * 1000) });
   const router = useRouter();
-  const logMessage = quiz ? `${status} ended: {CATEGORY: ${quiz.category}, QUIZ: ${quiz.id}}` : "";
 
   useEffect(() => {
     if (totalSeconds === 0) {
-      if (nextPath) {
-        router.push(nextPath);
-      }
+      const reqData = JSON.stringify(logsData)
+      window.localStorage.setItem("log", reqData)
+      router.push(nextPath);
     }
-  }, [logMessage, nextPath, router, status, totalSeconds]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [nextPath, router, status, totalSeconds]);
 
   return (
     <div className="flex justify-center items-center h-40">
@@ -41,16 +41,12 @@ export const CountdownBar: FC<BarProps> = ({ status, timeLimit, isExplanation, n
       </div>
       {/* カウントダウンバーの部分 */}
       <div className="flex items-center w-[800px] bg-pink-100">
-        {isExplanation ? (
-          <div className="h-4 w-[500px] bg-red-400"></div>
-        ) : (
-          <div className="h-4 bg-red-400" style={{ width: `${(totalSeconds / timeLimit) * 100}%` }}></div>
-        )}
+        <div className="h-4 bg-red-400" style={{ width: `${(totalSeconds / timeLimit) * 100}%` }}></div>
       </div>
       {/* 時間の表示 */}
       <div className="px-4">
         <p className="text-2xl font-bold">
-          {isExplanation ? "0 : 15" : `${Math.floor(totalSeconds / 60)} : ${`${totalSeconds % 60}`.padStart(2, "0")}`}
+          {Math.floor(totalSeconds / 60)} : {`${totalSeconds % 60}`.padStart(2, "0")}
         </p>
       </div>
     </div>
@@ -62,5 +58,4 @@ export const CountdownBar: FC<BarProps> = ({ status, timeLimit, isExplanation, n
 // <CoundownBar
 // status = "準備中"
 // timeLimit = {30} (sec)
-// isExplanation (説明の時は必ずつける)
 // />

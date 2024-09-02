@@ -12,3 +12,7 @@ export type TQuiz = {
   audio?: { audioPath: string; duration: number };
   next: string;
 };
+
+export type TLog = { time: string; quiz: string; category: string; status: string }[];
+
+export type TLogs = TLog[];
