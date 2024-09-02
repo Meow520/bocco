@@ -1,76 +1,74 @@
 {
-    "data": [
-      {
-        "id": "1",
-        "category": 1,
-        "quiz": "Do cellphone batteries really blow up?",
-        "time": 10,
-        "next": "2/thinking"
-      },
-      {
-        "id": "2",
-        "category": 1,
-        "quiz": "What's bothering you? Don't hold it in. Let it out.",
-        "time": 10,
-        "next": "3/thinking"
-      },
-      {
-        "id": "3",
-        "category": 1,
-        "quiz": "We decided to call off our trip.",
-        "time": 10,
-        "next": "4/thinking"
-      },
-      {
-        "id": "4",
-        "category": 1,
-        "quiz": "I gave in and bought my kid an iPad.",
-        "time": 10,
-        "next": "5/thinking"
-      },
-      {
-        "id": "5",
-        "category": 1,
-        "quiz": "Don't give out your personal information on social media.",
-        "time": 10,
-        "next": "6/thinking"
-      },
-      {
-        "id": "6",
-        "category": 1,
-        "quiz": "When I was jogging, a lightbulb went off in my head.",
-        "time": 10,
-        "next": "7/thinking"
-      },
-      {
-        "id": "7",
-        "category": 1,
-        "quiz": "I didn't want to go so I made up an excuse.",
-        "time": 10,
-        "next": "8/thinking"
-      },
-      {
-        "id": "8",
-        "category": 1,
-        "quiz": "He drank too much and passed out.",
-        "time": 10,
-        "next": "9/thinking"
-      },
-      {
-        "id": "9",
-        "category": 1,
-        "quiz": "This is an opportunity that I can't pass up.",
-        "time": 10,
-        "next": "10/thinking"
-      },
-      {
-        "id": "10",
-        "category": 1,
-        "quiz": "This meeting was pushed back from Wednesday to Friday.",
-        "time": 10,
-        "next": "complete"
-      }
-    
-     
-    ]
-  }
+  "data": [
+    {
+      "id": "1",
+      "category": 1,
+      "quiz": "Do cellphone batteries really blow up?",
+      "time": 10,
+      "next": "2/thinking"
+    },
+    {
+      "id": "2",
+      "category": 1,
+      "quiz": "What's bothering you? Don't hold it in. Let it out.",
+      "time": 10,
+      "next": "3/thinking"
+    },
+    {
+      "id": "3",
+      "category": 1,
+      "quiz": "We decided to call off our trip.",
+      "time": 10,
+      "next": "4/thinking"
+    },
+    {
+      "id": "4",
+      "category": 1,
+      "quiz": "I gave in and bought my kid an iPad.",
+      "time": 10,
+      "next": "5/thinking"
+    },
+    {
+      "id": "5",
+      "category": 1,
+      "quiz": "Don't give out your personal information on social media.",
+      "time": 10,
+      "next": "6/thinking"
+    },
+    {
+      "id": "6",
+      "category": 1,
+      "quiz": "When I was jogging, a lightbulb went off in my head.",
+      "time": 10,
+      "next": "7/thinking"
+    },
+    {
+      "id": "7",
+      "category": 1,
+      "quiz": "I didn't want to go so I made up an excuse.",
+      "time": 10,
+      "next": "8/thinking"
+    },
+    {
+      "id": "8",
+      "category": 1,
+      "quiz": "He drank too much and passed out.",
+      "time": 10,
+      "next": "9/thinking"
+    },
+    {
+      "id": "9",
+      "category": 1,
+      "quiz": "This is an opportunity that I can't pass up.",
+      "time": 10,
+      "next": "10/thinking"
+    },
+    {
+      "id": "10",
+      "category": 1,
+      "quiz": "This meeting was pushed back from Wednesday to Friday.",
+      "time": 10,
+      "next": "complete"
+    }
+  ]
+}

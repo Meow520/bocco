@@ -1,26 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import React, { FC, useEffect, useRef } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import { IoVolumeHigh } from "react-icons/io5";
 import { CountdownBar } from "@/components/elements/Bar/CountdownBar";
 import { QuizBar } from "@/components/elements/Bar/QuizBar";
+import { TLogs, TQuiz } from "@/types/type";
 
 type QuizMainProps = {
-  quiz: {
-    id: string;
-    category: number;
-    quiz?: string;
-    time: number;
-    thinking?: number;
-    image?: {
-      path: string;
-      width: number;
-      height: number;
-    };
-    audio?: { audioPath: string; duration: number };
-    next: string;
-  };
+  quiz: TQuiz;
   status: "thinking" | "quiz" | "playing";
 };
 
@@ -48,6 +36,19 @@ const AutoPlayAudio: React.FC<AudioPlayAudioProps> = ({ audioUrl }) => {
 
 // .tsxは.tsファイルの中でhtmlを戻り値とする関数をexportする
 export const QuizMain: FC<QuizMainProps> = ({ quiz, status }) => {
+  const [logs, setLogs] = useState<TLogs>([]);
+  const categoryToString: string = quiz.category.toString();
+  const log = [
+    { quiz: quiz.id, category: categoryToString, status: status, time: new Date().toLocaleString() },
+  ];
+  useEffect(() => {
+    let logsData: TLogs;
+    const resData = window.localStorage.getItem("log");
+    logsData = resData && JSON.parse(resData);
+    logsData.push(log);
+    setLogs([...logs, ...logsData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   // export constを書かないと他のファイルで使えなくなる
   // お名前:型<引数の型> = ({引数（型に書いているやつしか使えない）})　＝> {処理書いていく}
   const nextPath =
@@ -57,7 +58,7 @@ export const QuizMain: FC<QuizMainProps> = ({ quiz, status }) => {
       : quiz.next === "explanation"
         ? `/explanation/${quiz.category + 1}`
         : quiz.next === "complete"
-          ? "complete"
+          ? "/complete"
           : `/quiz/${quiz.next}`;
 
   return (
@@ -74,6 +75,8 @@ export const QuizMain: FC<QuizMainProps> = ({ quiz, status }) => {
               : quiz.time
         }
         nextPath={nextPath}
+        quiz={quiz}
+        logsData={logs}
       />
       {quiz.image && (
         // &&Trueの時だけの処理
