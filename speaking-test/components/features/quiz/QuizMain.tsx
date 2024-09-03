@@ -5,7 +5,7 @@ import React, { FC, useEffect, useRef, useState } from "react";
 import { IoVolumeHigh } from "react-icons/io5";
 import { CountdownBar } from "@/components/elements/Bar/CountdownBar";
 import { QuizBar } from "@/components/elements/Bar/QuizBar";
-import { TLogs, TQuiz } from "@/types/type";
+import { TLog, TLogs, TQuiz } from "@/types/type";
 
 type QuizMainProps = {
   quiz: TQuiz;
@@ -38,9 +38,7 @@ const AutoPlayAudio: React.FC<AudioPlayAudioProps> = ({ audioUrl }) => {
 export const QuizMain: FC<QuizMainProps> = ({ quiz, status }) => {
   const [logs, setLogs] = useState<TLogs>([]);
   const categoryToString: string = quiz.category.toString();
-  const log = [
-    { quiz: quiz.id, category: categoryToString, status: status, time: new Date().toLocaleString() },
-  ];
+  const log: TLog = { time: new Date().toLocaleString(), quiz: quiz.id, category: categoryToString, status: status };
   useEffect(() => {
     let logsData: TLogs;
     const resData = window.localStorage.getItem("log");

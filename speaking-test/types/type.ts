@@ -13,6 +13,6 @@ export type TQuiz = {
   next: string;
 };
 
-export type TLog = { time: string; quiz: string; category: string; status: string }[];
+export type TLog = { time: string; quiz: string; category: string; status: string };
 
 export type TLogs = TLog[];
