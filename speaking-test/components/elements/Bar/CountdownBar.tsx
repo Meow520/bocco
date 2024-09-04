@@ -44,7 +44,7 @@ export const CountdownBar: FC<BarProps> = ({ status, timeLimit, nextPath, logsDa
         <div className="h-4 bg-red-400" style={{ width: `${(totalSeconds / timeLimit) * 100}%` }}></div>
       </div>
       {/* 時間の表示 */}
-      <div className="px-4">
+      <div className="w-24 text-center">
         <p className="text-2xl font-bold">
           {Math.floor(totalSeconds / 60)} : {`${totalSeconds % 60}`.padStart(2, "0")}
         </p>

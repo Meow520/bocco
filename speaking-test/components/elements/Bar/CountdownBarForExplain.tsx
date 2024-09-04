@@ -23,7 +23,7 @@ export const CountdownBar: FC<BarProps> = ({}) => {
         <div className="h-4 w-[500px] bg-red-400"></div>
       </div>
       {/* 時間の表示 */}
-      <div className="px-4">
+      <div className="w-24 text-center">
         <p className="text-2xl font-bold">0 : 15</p>
       </div>
     </div>
