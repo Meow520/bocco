@@ -49,8 +49,9 @@ class Auth:
     def _update_token(self) -> Tuple[str, str]:
         new_access_token = self._get_access_token()
         self.access_token = new_access_token
-        new_uuid = self._get_uuid()
-        self.uuid = new_uuid
+        if self.uuid == "":
+            new_uuid = self._get_uuid()
+            self.uuid = new_uuid
         self.update_timestamp = time.time()
         return new_access_token, new_uuid
 
@@ -60,5 +61,5 @@ class Auth:
         if ut - self.update_timestamp >= 3600:
             new_access_token, new_uuid = self._update_token()
         else:
-            new_access_token, new_uuid = self.access_token, self._get_uuid()
+            new_access_token, new_uuid = self.access_token, self.uuid
         return new_access_token, new_uuid

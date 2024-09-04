@@ -155,9 +155,9 @@
         "width": 600,
         "height": 450
       },
-      "next": "17/thinking"
+      "next": "complete"
     },
-    
+
     {
       "id": "2",
       "category": 2,
@@ -181,8 +181,5 @@
       },
       "next": "explanation"
     }
-  
-   
   ]
 }
-
