@@ -69,6 +69,160 @@
       "quiz": "Do we have to dress up for dinner?",
       "time": 10,
       "next": "complete"
+    },
+    {
+      "id": "11",
+      "category": 1,
+      "quiz":"Classical conditioning is a learning process in which a neutral stimulus becomes associated with a meaningful stimulus, eliciting a conditioned response.",
+      "time": 10,
+      "next": "12/thinking"
+    },
+    {
+      "id": "12",
+      "category": 1,
+      "quiz": "Bloom's Taxonomy classifies educational objectives into levels of complexity, ranging from simple recall of facts (knowledge) to higher-order thinking skills like evaluation and creation. ",
+      "time": 10,
+      "next": "13/thinking"
+    },
+    {
+      "id": "13",
+      "category": 1,
+      "quiz":"Quantum entanglement describes a phenomenon where two or more particles become interconnected in such a way that the state of one particle directly influences the state of another, regardless of the distance separating them. ",
+      "time": 10,
+      "next": "14/thinking"
+    },
+    {
+      "id": "14",
+      "category": 1,
+      "quiz":"Anaphylaxis is a severe, potentially life-threatening allergic reaction that can occur rapidly and requires immediate medical intervention.",
+      "time": 10,
+      "next": "15/thinking"
+    },
+    {
+      "id": "15",
+      "category": 1,
+      "quiz":"Stream of consciousness is a narrative mode that attempts to capture the flow of thoughts, feelings, and memories as they occur in a character's mind, often with little regard for traditional structure or grammar. ",
+      "time": 10,
+      "next": "explanation"
+    },
+    {
+      "id": "16",
+      "category": 2,
+      "quiz": "仕事を手伝ってくれた人にお礼を言おう。 ",
+      "time": 15,
+      "thinking": 5,
+      "image": {
+        "path": "3-16.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "17/thinking"
+    },
+    {
+      "id": "17",
+      "category": 2,
+      "quiz": "昼休み。同僚をランチに誘ってみよう。",
+      "time": 15,
+      "thinking": 5,
+      "image": {
+        "path": "3-17.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "18/thinking"
+    },
+    {
+      "id": "18",
+      "category": 2,
+      "quiz": "窓の外はすごい青空。",
+      "time": 15,
+      "thinking": 5,
+      "image": {
+        "path": "3-18.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "19/thinking"
+    },
+    {
+      "id": "19",
+      "category": 2,
+      "quiz": "待ち合わせの時間に遅れそうだ。携帯で連絡を入れておこう。",
+      "time": 15,
+      "thinking": 5,
+      "image": {
+        "path": "3-19.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "20/thinking"
+    },
+    {
+      "id": "20",
+      "category": 2,
+      "quiz": "来日した取引先の人。明日は一日日本案内をすることになった。",
+      "time": 15,
+      "thinking": 5,
+      "image": {
+        "path": "3-20.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "complete"
+    },
+    
+    {
+      "id": "2",
+      "category": 2,
+      "time": 15,
+      "audio": {
+        "audioPath": "sample.mp3",
+        "duration": 3
+      },
+      "next": "3/thinking"
+    },
+    {
+      "id": "21",
+      "category": 3,
+      "time": 30,
+      "thinking": 15,
+      "audio": {
+        "audioPath": "3-3-1.pm3",
+        "duration": 3
+      },
+ 
+    
+     "next": "22/thinking"
+    },
+    {
+      "id": "22",
+      "category": 3,
+      "time": 30,
+      "thinking": 15,
+      "audio": {
+         "audioPath": "3-3-2.pm3",
+         "duration": 3
+         },
+
+    
+    "next": "22/thinking"
+    },
+    {
+      "id": "23",
+      "category": 3,
+      "time": 30,
+      "thinking": 15,
+      "audio": {
+        "audioPath": "3-3-3.pm3",
+        "duration": 3
+       },
+
+    
+      "next": "complete"
     }
+
+  
+   
   ]
 }
+

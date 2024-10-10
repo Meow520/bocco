@@ -3,72 +3,224 @@
     {
       "id": "1",
       "category": 1,
-      "quiz": "Do cellphone batteries really blow up?",
+      "quiz": "It might be a good idea to check that place out beforehand.",
       "time": 10,
       "next": "2/thinking"
     },
     {
       "id": "2",
       "category": 1,
-      "quiz": "What's bothering you? Don't hold it in. Let it out.",
+      "quiz": "Are you going to dress up for Halloween this year?",
       "time": 10,
       "next": "3/thinking"
     },
     {
       "id": "3",
       "category": 1,
-      "quiz": "We decided to call off our trip.",
+      "quiz": "I ended up pulling an all-nighter last night.",
       "time": 10,
       "next": "4/thinking"
     },
     {
       "id": "4",
       "category": 1,
-      "quiz": "I gave in and bought my kid an iPad.",
+      "quiz": "I'm settling down in Tokyo right now, but I want to eventually settle down in the countryside.",
       "time": 10,
       "next": "5/thinking"
     },
     {
       "id": "5",
       "category": 1,
-      "quiz": "Don't give out your personal information on social media.",
+      "quiz": "When I look back on my twenties, I realize those were the best times.",
       "time": 10,
       "next": "6/thinking"
     },
     {
       "id": "6",
       "category": 1,
-      "quiz": "When I was jogging, a lightbulb went off in my head.",
+      "quiz": "Make sure you go ove your answers before you turn in your test.",
       "time": 10,
       "next": "7/thinking"
     },
     {
       "id": "7",
       "category": 1,
-      "quiz": "I didn't want to go so I made up an excuse.",
+      "quiz": "I gave away my couch to my younger sister.",
       "time": 10,
       "next": "8/thinking"
     },
     {
       "id": "8",
       "category": 1,
-      "quiz": "He drank too much and passed out.",
+      "quiz": "Is there an ATM around here? I need to take out some cash.",
       "time": 10,
       "next": "9/thinking"
     },
     {
       "id": "9",
       "category": 1,
-      "quiz": "This is an opportunity that I can't pass up.",
+      "quiz": "We have to hurry up. We're running out of time.",
       "time": 10,
       "next": "10/thinking"
     },
     {
       "id": "10",
       "category": 1,
-      "quiz": "This meeting was pushed back from Wednesday to Friday.",
+      "quiz": "I asked her out to dinner tomorrow.",
+      "time": 10,
+      "next": "11/thinking"
+    },
+    {
+      "id": "11",
+      "category": 1,
+      "quiz": "Cognitive dissonace occurs when an individual experiences discomfort due to holding two conflicting beliefs or values simultaneously.",
+      "time": 10,
+      "next": "12/thinking"
+    },
+    {
+      "id": "12",
+      "category": 1,
+      "quiz": "Constructivist learning theory suggests that students actively construct their own understanding and knowledge of the world through experiences and reflecting on those experiences. ",
+      "time": 10,
+      "next": "13/thinking"
+    },
+    {
+      "id": "13",
+      "category": 1,
+      "quiz": "The photoelectric effect occurs when light shines on a material and ejects electrons from its surface, demonstrating the particle-like properties of light.  ",
+      "time": 10,
+      "next": "14/thinking"
+    },
+    {
+      "id": "14",
+      "category": 1,
+      "quiz": "Hypertension is a chronic medical condition where the blood pressure in the arteries is persistently elevated, increasing the risk of heart disease and stroke. ",
+      "time": 10,
+      "next": "15/thinking"
+    },
+    {
+      "id": "15",
+      "category": 1,
+      "quiz": "Allegory is a literary device where characters and events represent abstract ideas or moral qualities, often conveying a deeper meaning beyond the literal narrative. ",
       "time": 10,
       "next": "complete"
+    },
+    {
+      "id": "16",
+      "category": 2,
+      "quiz": "どんなことをするのが好きですか？と聞かれた",
+      "time": 15,
+      "thinking": 5,
+      "image": {
+        "path": "2-16.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "17/thinking"
+    },
+    {
+      "id": "17",
+      "category": 2,
+      "quiz": "相手のことをもっと知りたい。趣味を尋ねてみよう。",
+      "time": 15,
+      "thinking": 5,
+      "image": {
+        "path": "2-17.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "18/thinking"
+    },
+    {
+      "id": "18",
+      "category": 2,
+      "quiz": "先日知り合った人と再会。「また会えましたね」と言われた。",
+      "time": 15,
+      "thinking": 5,
+      "image": {
+        "path": "2.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "19/thinking"
+    },
+    {
+      "id": "19",
+      "category": 2,
+      "quiz": "この料理はあんまり上手くできなかった",
+      "time": 15,
+      "thinking": 5,
+      "image": {
+        "path": "1-19.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "20/thinking"
+    },
+    {
+      "id": "20",
+      "category": 2,
+      "quiz": "もっとどんどん食べてと言われたけど",
+      "time": 15,
+      "thinking": 5,
+      "image": {
+        "path": "1-20.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "complete"
+    },
+
+    {
+      "id": "2",
+      "category": 2,
+      "time": 15,
+      "audio": {
+        "audioPath": "sample.mp3",
+        "duration": 3
+      },
+      "next": "3/thinking"
+    },
+    {
+      "id": "21",
+      "category": 3,
+      "time": 30,
+      "thinking": 15,
+     "audio": {
+         "audioPath": "1-3-1.pm3",
+         "duration": 3
+       },
+
+      
+      "next": "22/thinking"
+    },
+    {
+      "id": "22",
+      "category": 3,
+      "time": 30,
+      "thinking": 15,
+     "audio": {
+          "audioPath": "1-3-2.pm3",
+          "duration": 3
+        },
+      
+      "next": "22/thinking"
+    },
+    {
+      "id": "23",
+      "category": 3,
+      "time": 30,
+      "thinking": 15,
+      "audio": {
+          "audioPath": "1-3-3.pm3",
+          "duration":3
+        },
+
+      "next": "complete"
     }
+
+
+  
+   
   ]
 }
