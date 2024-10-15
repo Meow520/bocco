@@ -103,7 +103,7 @@
       "category": 1,
       "quiz": "Allegory is a literary device where characters and events represent abstract ideas or moral qualities, often conveying a deeper meaning beyond the literal narrative. ",
       "time": 10,
-      "next": "2/explanation"
+      "next": "explanation/2"
     },
     {
       "id": "16",
@@ -168,7 +168,17 @@
         "width": 600,
         "height": 450
       },
-      "next": "3/explanation"
+      "next": "explanation/3"
+    },
+    {
+      "id": "2",
+      "category": 3,
+      "time": 15,
+      "audio": {
+        "audioPath": "sample.mp3",
+        "duration": 3
+      },
+      "next": "3/thinking"
     },
     {
       "id": "21",

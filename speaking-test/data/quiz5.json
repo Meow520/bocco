@@ -103,7 +103,7 @@
       "category": 1,
       "quiz":"Metafiction refers to a type of fiction that self-consciously addresses the devices of fiction, often blurring the boundary between fiction and reality. ",
       "time": 10,
-      "next": "explanation"
+      "next": "explanation/2"
     },
     {
       "id": "16",
@@ -168,7 +168,7 @@
         "width": 600,
         "height": 450
       },
-      "next": "complete"
+      "next": "explanation/3"
     },
     
     {
