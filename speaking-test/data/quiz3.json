@@ -68,7 +68,7 @@
       "category": 1,
       "quiz": "Do we have to dress up for dinner?",
       "time": 10,
-      "next": "complete"
+      "next": "11/thinking"
     },
     {
       "id": "11",
@@ -103,7 +103,7 @@
       "category": 1,
       "quiz":"Stream of consciousness is a narrative mode that attempts to capture the flow of thoughts, feelings, and memories as they occur in a character's mind, often with little regard for traditional structure or grammar. ",
       "time": 10,
-      "next": "explanation/2"
+      "next": "explanation"
     },
     {
       "id": "16",
