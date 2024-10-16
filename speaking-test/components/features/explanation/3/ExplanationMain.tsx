@@ -13,7 +13,7 @@ export const ExplanationMain = () => {
             <br />
             流れてくる音声に対して回答をしてください
             <br />
-            制限時間は30秒です
+        　　回答時間は15秒です
           </p>
         </div>
 

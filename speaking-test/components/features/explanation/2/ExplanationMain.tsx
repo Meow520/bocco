@@ -21,9 +21,9 @@ export const ExplanationMain = () => {
           <p className="text-red-500 text-2xl font-semibold text-center">
             左上のBoccoﾁｬﾝが「録音中」と表示されたら
             <br />
-            文章と図に対して回答をしてください
+            図に対する文章を和訳して回答してください
             <br />
-            制限時間は30秒です
+            考える時間が10秒、回答時間が15秒です。
           </p>
         </div>
 
