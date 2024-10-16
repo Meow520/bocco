@@ -3,72 +3,226 @@
     {
       "id": "1",
       "category": 1,
-      "quiz": "I found out from my friend, that he was lying",
+      "quiz": "Feel free to drop by my office any time.",
       "time": 10,
       "next": "2/thinking"
     },
     {
       "id": "2",
       "category": 1,
-      "quiz": "I'm freaking out because I've lost my passport.",
+      "quiz": "Since we don't have anything at home, let's eat out somewhere.",
       "time": 10,
       "next": "3/thinking"
     },
     {
       "id": "3",
       "category": 1,
-      "quiz": "My parents feaked out when they saw my tattoo.",
+      "quiz": "I ended up turning down the job offer.",
       "time": 10,
       "next": "4/thinking"
     },
     {
       "id": "4",
       "category": 1,
-      "quiz": "What time did you get back last night?",
+      "quiz": "Your backpack is going to fall off the overhead luggage rack.",
       "time": 10,
       "next": "5/thinking"
     },
     {
       "id": "5",
       "category": 1,
-      "quiz": "I'll get back to you on that.",
+      "quiz": "I slipped and nearly fell off the cliff.",
       "time": 10,
       "next": "6/thinking"
     },
     {
       "id": "6",
       "category": 1,
-      "quiz": "My dad got me into fishing.",
+      "quiz": "No one can figure her out.",
       "time": 10,
       "next": "7/thinking"
     },
     {
       "id": "7",
       "category": 1,
-      "quiz": "What's the first thing you do when you get up?",
+      "quiz": "I have to figure out a way to practice speaking English.",
       "time": 10,
       "next": "8/thinking"
     },
     {
       "id": "8",
       "category": 1,
-      "quiz": "I gave up playing baseball when I was in high school.",
+      "quiz": "I'm filling for Lisa today.",
       "time": 10,
       "next": "9/thinking"
     },
     {
       "id": "9",
       "category": 1,
-      "quiz": "Everybody gave up on him except his parents.",
+      "quiz": "Could you fill out this survey?",
       "time": 10,
       "next": "10/thinking"
     },
     {
       "id": "10",
       "category": 1,
-      "quiz": "What do you want to be when you grow up?",
+      "quiz": "How much is it going for?",
       "time": 10,
       "next": "complete"
-    }
+    },
+    {
+      "id": "11",
+      "category": 1,
+      "quiz":"Operant conditioning involves learning through reinforcement or punishment, where behaviors are shaped by their consequences.",
+      "time": 10,
+      "next": "12/thinking"
+    },
+    {
+      "id": "12",
+      "category": 1,
+      "quiz": "The concept of differentiated instruction involves tailoring teaching methods and materials to meet the diverse needs, interests, and abilities of students within a classroom.",
+      "time": 10,
+      "next": "13/thinking"
+    },
+    {
+      "id": "13",
+      "category": 1,
+      "quiz":"Heisenberg's uncertainty principle asserts that it is impossible to simultaneously know both the exact position and exact momentum of a particle with perfect accuracy. ",
+      "time": 10,
+      "next": "14/thinking"
+    },
+    {
+      "id": "14",
+      "category": 1,
+      "quiz":"Immunosuppression is the reduction of the efficacy of the immune system, often intentionally induced by medications to prevent organ transplant rejection or to treat autoimmune diseases.",
+      "time": 10,
+      "next": "15/thinking"
+    },
+    {
+      "id": "15",
+      "category": 1,
+      "quiz":"Metafiction refers to a type of fiction that self-consciously addresses the devices of fiction, often blurring the boundary between fiction and reality. ",
+      "time": 10,
+      "next": "explanation"
+    },
+    {
+      "id": "16",
+      "category": 2,
+      "quiz": "何か食べたいものはありますか？ ",
+      "time": 15,
+      "thinking": 10,
+      "image": {
+        "path": "5-16.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "17/thinking"
+    },
+    {
+      "id": "17",
+      "category": 2,
+      "quiz": "お手洗いをお借りしてもいいですか？",
+      "time": 15,
+      "thinking": 10,
+      "image": {
+        "path": "5-17.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "18/thinking"
+    },
+    {
+      "id": "18",
+      "category": 2,
+      "quiz": "コーヒーをいただきます。",
+      "time": 15,
+      "thinking": 10,
+      "image": {
+        "path": "5-18.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "19/thinking"
+    },
+    {
+      "id": "19",
+      "category": 2,
+      "quiz": "すごくいきたいんだけど、予定が入っちゃってるんだよ。",
+      "time": 15,
+      "thinking": 10,
+      "image": {
+        "path": "5-19.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "20/thinking"
+    },
+    {
+      "id": "20",
+      "category": 2,
+      "quiz": "ちょっとお願いがあるんだけど、いい？",
+      "time": 15,
+      "thinking": 10,
+      "image": {
+        "path": "5-20.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "explanation"
+    },
+    
+    {
+      "id": "2",
+      "category": 2,
+      "time": 15,
+      "audio": {
+        "audioPath": "sample.mp3",
+        "duration": 3
+      },
+      "next": "3/thinking"
+    },
+    {
+    "id": "21",
+    "category": 3,
+    "time": 30,
+    "thinking": 15,
+    "audio": {
+        "audioPath": "5-3-1.pm3",
+        "duration": 3
+      },
+
+    
+    "next": "22/thinking"
+    },
+    {
+     "id": "22",
+     "category": 3,
+     "time": 30,
+     "thinking": 15,
+     "audio": {
+        "audioPath": "5-3-2.pm3",
+        "duration": 3
+      },
+
+    
+    "next": "23/thinking"
+    },
+    {
+    "id": "23",
+    "category": 3,
+    "time": 30,
+    "thinking": 15,
+     "audio": {
+        "audioPath": "5-3-3.pm3",
+        "duration": 3
+      },
+
+    
+    "next": "complete"
+    } 
+
+  
+   
   ]
 }
+

@@ -69,6 +69,160 @@
       "quiz": "How much is it going for?",
       "time": 10,
       "next": "complete"
-    }
+    },
+    {
+      "id": "11",
+      "category": 1,
+      "quiz":"Operant conditioning involves learning through reinforcement or punishment, where behaviors are shaped by their consequences.",
+      "time": 10,
+      "next": "12/thinking"
+    },
+    {
+      "id": "12",
+      "category": 1,
+      "quiz": "The concept of differentiated instruction involves tailoring teaching methods and materials to meet the diverse needs, interests, and abilities of students within a classroom.",
+      "time": 10,
+      "next": "13/thinking"
+    },
+    {
+      "id": "13",
+      "category": 1,
+      "quiz":"Heisenberg's uncertainty principle asserts that it is impossible to simultaneously know both the exact position and exact momentum of a particle with perfect accuracy. ",
+      "time": 10,
+      "next": "14/thinking"
+    },
+    {
+      "id": "14",
+      "category": 1,
+      "quiz":"Immunosuppression is the reduction of the efficacy of the immune system, often intentionally induced by medications to prevent organ transplant rejection or to treat autoimmune diseases.",
+      "time": 10,
+      "next": "15/thinking"
+    },
+    {
+      "id": "15",
+      "category": 1,
+      "quiz":"Metafiction refers to a type of fiction that self-consciously addresses the devices of fiction, often blurring the boundary between fiction and reality. ",
+      "time": 10,
+      "next": "explanation"
+    },
+    {
+      "id": "16",
+      "category": 2,
+      "quiz": "夏休みはどこに行かれたんですか？ ",
+      "time": 15,
+      "thinking": 10,
+      "image": {
+        "path": "4-16.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "17/thinking"
+    },
+    {
+      "id": "17",
+      "category": 2,
+      "quiz": "今まで言った中で、一番良かった場所はどこですか？",
+      "time": 15,
+      "thinking": 10,
+      "image": {
+        "path": "4-17.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "18/thinking"
+    },
+    {
+      "id": "18",
+      "category": 2,
+      "quiz": "昨日はよく眠れましたか？",
+      "time": 15,
+      "thinking": 10,
+      "image": {
+        "path": "4-18.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "19/thinking"
+    },
+    {
+      "id": "19",
+      "category": 2,
+      "quiz": "とりあえず、電車で新宿で出ますね。",
+      "time": 15,
+      "thinking": 10,
+      "image": {
+        "path": "4-19.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "20/thinking"
+    },
+    {
+      "id": "20",
+      "category": 2,
+      "quiz": "来週は欠席させて頂きたいのですが。",
+      "time": 15,
+      "thinking": 10,
+      "image": {
+        "path": "4-20.png",
+        "width": 600,
+        "height": 450
+      },
+      "next": "explanation"
+    },
+    
+    {
+      "id": "2",
+      "category": 2,
+      "time": 15,
+      "audio": {
+        "audioPath": "sample.mp3",
+        "duration": 3
+      },
+      "next": "21/thinking"
+    },
+   {
+    "id": "21",
+    "category": 3,
+    "time": 30,
+    "thinking": 15,
+   "audio": {
+        "audioPath": "4-3-1.pm3",
+        "duration": 3
+      },
+
+    
+    "next": "22/thinking"
+  },
+  {
+    "id": "22",
+    "category": 3,
+    "time": 30,
+    "thinking": 15,
+    "audio": {
+        "audioPath": "4-3-2.pm3",
+        "duration": 3
+      },
+
+    
+    "next": "23/thinking"
+  },
+  {
+    "id": "23",
+    "category": 3,
+    "time": 30,
+    "thinking": 15,
+    "audio": {
+        "audioPath": "4-3-3.pm3",
+        "duration": 3
+      },
+
+    
+    "next": "complete"
+  }
+
+  
+   
   ]
 }
+
