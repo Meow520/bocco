@@ -108,9 +108,9 @@
     {
       "id": "16",
       "category": 2,
-      "quiz": "話が続かない。休暇の話題でも振ってみる ",
+      "quiz": "何か食べたいものはありますか？ ",
       "time": 15,
-      "thinking": 5,
+      "thinking": 10,
       "image": {
         "path": "5-16.png",
         "width": 600,
@@ -121,9 +121,9 @@
     {
       "id": "17",
       "category": 2,
-      "quiz": "今まで日本の色んなところにいった、という相手に。",
+      "quiz": "お手洗いをお借りしてもいいですか？",
       "time": 15,
-      "thinking": 5,
+      "thinking": 10,
       "image": {
         "path": "5-17.png",
         "width": 600,
@@ -134,9 +134,9 @@
     {
       "id": "18",
       "category": 2,
-      "quiz": "朝、ホテルにお迎え。朝の挨拶に一言。",
+      "quiz": "コーヒーをいただきます。",
       "time": 15,
-      "thinking": 5,
+      "thinking": 10,
       "image": {
         "path": "5-18.png",
         "width": 600,
@@ -147,9 +147,9 @@
     {
       "id": "19",
       "category": 2,
-      "quiz": "ここからの移動経路を説明しよう。",
+      "quiz": "すごくいきたいんだけど、予定が入っちゃってるんだよ。",
       "time": 15,
-      "thinking": 5,
+      "thinking": 10,
       "image": {
         "path": "5-19.png",
         "width": 600,
@@ -160,9 +160,9 @@
     {
       "id": "20",
       "category": 2,
-      "quiz": "来週は授業に行くことができないので、あらかじめ先生に言っておこう。",
+      "quiz": "ちょっとお願いがあるんだけど、いい？",
       "time": 15,
-      "thinking": 5,
+      "thinking": 10,
       "image": {
         "path": "5-20.png",
         "width": 600,
@@ -186,7 +186,7 @@
     "category": 3,
     "time": 30,
     "thinking": 15,
-"audio": {
+    "audio": {
         "audioPath": "5-3-1.pm3",
         "duration": 3
       },

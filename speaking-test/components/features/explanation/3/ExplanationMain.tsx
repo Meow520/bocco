@@ -19,7 +19,8 @@ export const ExplanationMain = () => {
 
       <div className="absolute bottom-6 right-6">
           <div className="mr-0 ml-auto">
-            <LinkButton label="start test" color="bg-gray-300 hover:bg-gray-200" size="bg" path="/quiz/20" />
+            <LinkButton label="start test" color="bg-gray-300 hover:bg-gray-200" size="bg" path="/quiz/21
+            " />
           </div>
 
       </div>

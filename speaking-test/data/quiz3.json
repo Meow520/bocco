@@ -108,9 +108,9 @@
     {
       "id": "16",
       "category": 2,
-      "quiz": "仕事を手伝ってくれた人にお礼を言おう。 ",
+      "quiz": "ありがとうございます。本当に助かります。 ",
       "time": 15,
-      "thinking": 5,
+      "thinking": 10,
       "image": {
         "path": "3-16.png",
         "width": 600,
@@ -121,9 +121,9 @@
     {
       "id": "17",
       "category": 2,
-      "quiz": "昼休み。同僚をランチに誘ってみよう。",
+      "quiz": "私たちと一緒にご飯、行きませんか？",
       "time": 15,
-      "thinking": 5,
+      "thinking": 10,
       "image": {
         "path": "3-17.png",
         "width": 600,
@@ -134,9 +134,9 @@
     {
       "id": "18",
       "category": 2,
-      "quiz": "窓の外はすごい青空。",
+      "quiz": "すごくいい天気ですね。",
       "time": 15,
-      "thinking": 5,
+      "thinking": 10,
       "image": {
         "path": "3-18.png",
         "width": 600,
@@ -147,9 +147,9 @@
     {
       "id": "19",
       "category": 2,
-      "quiz": "待ち合わせの時間に遅れそうだ。携帯で連絡を入れておこう。",
+      "quiz": "申し訳ないんですが、10分ほど遅れそうです。",
       "time": 15,
-      "thinking": 5,
+      "thinking": 10,
       "image": {
         "path": "3-19.png",
         "width": 600,
@@ -160,17 +160,26 @@
     {
       "id": "20",
       "category": 2,
-      "quiz": "来日した取引先の人。明日は一日日本案内をすることになった。",
+      "quiz": "明日の朝は、ホテルまで迎えに行きますよ。",
       "time": 15,
-      "thinking": 5,
+      "thinking": 10,
       "image": {
         "path": "3-20.png",
         "width": 600,
         "height": 450
       },
-      "next": "explanation/3"
+      "next": "explanation"
     },
-
+    {
+      "id": "2",
+      "category": 3,
+      "time": 15,
+      "audio": {
+        "audioPath": "sample.mp3",
+        "duration": 3
+      },
+      "next": "3/thinking"
+    },
     {
       "id": "21",
       "category": 3,

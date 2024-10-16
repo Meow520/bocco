@@ -108,9 +108,9 @@
     {
       "id": "16",
       "category": 2,
-      "quiz": "どんなことをするのが好きですか？と聞かれた",
+      "quiz": "今は海外ドラマにはまっています。",
       "time": 15,
-      "thinking": 5,
+      "thinking": 10,
       "image": {
         "path": "1-16.png",
         "width": 600,
@@ -121,9 +121,9 @@
     {
       "id": "17",
       "category": 2,
-      "quiz": "相手のことをもっと知りたい。趣味を尋ねてみよう。",
+      "quiz": "お休みの時なんかは何をされているんですか？",
       "time": 15,
-      "thinking": 5,
+      "thinking": 10,
       "image": {
         "path": "1-17.png",
         "width": 600,
@@ -134,9 +134,9 @@
     {
       "id": "18",
       "category": 2,
-      "quiz": "先日知り合った人と再会。「また会えましたね」と言われた。",
+      "quiz": "また会えましたね。お元気でしたか？",
       "time": 15,
-      "thinking": 5,
+      "thinking": 10,
       "image": {
         "path": "1-18.png",
         "width": 600,
@@ -147,9 +147,9 @@
     {
       "id": "19",
       "category": 2,
-      "quiz": "この料理はあんまり上手くできなかった",
+      "quiz": "ごめん。それちょっと失敗しちゃったんだよ。",
       "time": 15,
-      "thinking": 5,
+      "thinking": 10,
       "image": {
         "path": "1-19.png",
         "width": 600,
@@ -160,9 +160,9 @@
     {
       "id": "20",
       "category": 2,
-      "quiz": "もっとどんどん食べてと言われたけど",
+      "quiz": "ありがとう。でも、もうすごくおなかがいっぱいです。",
       "time": 15,
-      "thinking": 5,
+      "thinking": 10,
       "image": {
         "path": "1-20.png",
         "width": 600,
