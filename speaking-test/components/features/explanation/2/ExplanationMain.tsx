@@ -13,7 +13,7 @@ export const ExplanationMain = () => {
         {/* mx-auto: marginの横方向をautoにする→Image使った時に写真が中央に行くよ */}
         {/* py-4:paddingを縦方向に4（16px）入れる */}
         <Image src={"/images/2.png"} alt="picture" width={400} height={300} priority className="mx-auto py-4"/>
-        <p className="text-2xl text-center">&apos;この本を返したいです</p>
+        <p className="text-2xl text-center">&apos; この本を返したいです</p>
       </div>
 
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-60">
