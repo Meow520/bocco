@@ -23,13 +23,13 @@ export const ExplanationMain = () => {
             <br />
             図に対する文章を和訳して回答してください
             <br />
-            考える時間が10秒、回答時間が15秒です。
+            考える時間が10秒、回答時間が15秒です
           </p>
         </div>
 
       <div className="absolute bottom-6 right-6">
           <div className="mr-0 ml-auto">
-            <LinkButton label="start test" color="bg-gray-300 hover:bg-gray-200" size="bg" path="/quiz/16" />
+            <LinkButton label="start test" color="bg-gray-300 hover:bg-gray-200" size="bg" path="/quiz/16/thinking" />
           </div>
 
       </div>
