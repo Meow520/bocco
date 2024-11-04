@@ -9,7 +9,7 @@ if k=="1":
     tools.send_speech("Hello. What's your name?")
 else: 
     tools.send_speech("Please wait a moment")
-
+    
 tools.send_speech("My name is BOCCO and I would be happy if you call me BOCCO-chan. Can I ask you a few questions so we can get to know each other?")
 k=input()
 if k=="1":
@@ -22,7 +22,7 @@ k=input()
 if k=="1":
     tools.send_speech("It looks so delicious.")
 else: 
-    tools.send_speech("Please wait a miniutes.")
+    tools.send_speech("Please wait a moment.")
 
 tools.send_speech("By the way, there is some rice in the refrigerator nearby. I'd like you to fetch some for me.")
 k=input()
