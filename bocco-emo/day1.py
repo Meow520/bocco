@@ -31,10 +31,10 @@ if k=="1":
 else: 
     tools.send_speech("Please wait a moment")
 
-tools.send_speech("While you're there, there's should be some food in there. You can take it home and eat it")
+tools.send_speech("While you're there, there should be some food in there. Feel free to take it home and eat it")
 k=input()
 if k=="1":
-    tools.send_speech("While you're there, there's should be some food in there. You can take it home and eat it")
+    tools.send_speech("While you're there, there should be some food in there. Feel free to take it home and eat it")
 else: 
     tools.send_speech("Please wait a moment")
 
@@ -59,10 +59,10 @@ if k=="1":
 else: 
     tools.send_speech("Please wait a moment")
 
-tools.send_speech("First, I want you to get the block on the shelf behind you.")
+tools.send_speech("First, I want you to get the blocks on the shelf behind you.")
 k=input()
 if k=="1":
-    tools.send_speech("First, I want you to get the block on the shelf behind you.")
+    tools.send_speech("First, I want you to get the blocks on the shelf behind you.")
 else: 
     tools.send_speech("Please wait a moment")
 
