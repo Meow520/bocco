@@ -25,7 +25,7 @@ tools.send_speech("What did you eat today?")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("It looks so delicious.")
+        tools.send_speech("That sounds so delicious.")
         break
     if k=="2":
         tools.send_speech("You must be hungry.")
@@ -36,13 +36,13 @@ tools.send_speech("I have some snacks for you on the table there.")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("While you're there, there should be some food in there. Feel free to take it home and eat it")
+        tools.send_speech("While you're there, feel free to take it home and eat it")
         break
     else: 
         #人が期待した行動をしなかった場合にロボットが言うべき言葉が入る
         #簡単な英語に直したものを用意すると良い(伝わりやすいものに)
         #小学生レベルの英語で
-        tools.send_speech("I'm putting some snacks on the table for you.")
+        tools.send_speech("I've put some snacks on the table for you.")
 
 tools.send_speech("Can I ask you to get that snack?")
 while True:
@@ -70,19 +70,19 @@ while True:
     if k=="1":
         tools.send_speech("Yes! That's it.")
         break
-    k=="2":
+    if k=="2":
         tools.send_speech("That's not it.")
     else: 
         tools.send_speech("I need you to bring me the blocks on that shelf.")
 
-tools.send_speech("That's your Bring it to your desk.")
+tools.send_speech("Then please bring it to the desk.")
 while True:
     k=input()
     if k=="1":
         tools.send_speech("Today I want you to make an animal with these blocks.")
         break
     else: 
-        tools.send_speech("That's your Bring it to your desk.")
+        tools.send_speech("Please bring the blocks to the desk in front of me")
 
 tools.send_speech("Are you ready?")
 while True:
@@ -97,10 +97,10 @@ tools.send_speech("Now I'm going to ask you to use those blocks to make an anima
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("“Open the book on the block.")
+        tools.send_speech("Open the book on top of the blocks.")
         break
     else: 
-        tools.send_speech("Open the book on the brock box!")
+        tools.send_speech("Open the book on the block box!")
 
 tools.send_speech("Open the page with the yellow sticky note.")
 while True:
@@ -124,7 +124,7 @@ tools.send_speech("All right, let's begin.")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("Time is less than 15 minutes.")
+        tools.send_speech("Your time limit is 15 minutes.")
         break
     else: 
         tools.send_speech("Let's begin")
@@ -156,14 +156,14 @@ while True:
     else: 
         tools.send_speech("Do you often get to speak English?")
 
-tools.send_speech("By yhe way, Do you like animals?")
+tools.send_speech("Also, do you like animals?")
 while True:
     k=input()
     if k=="1":
         tools.send_speech("What kind of animal do you like best?")
         break
-    k=="2":#動物が苦手な場合
-        tools.send_speech("I see. Which of those animals are your least favorite?")
+    if k=="2":#動物が苦手な場合
+        tools.send_speech("I see. Which animal is your least favorite?")
         break
     else: 
         tools.send_speech("Which animal is your favorite?")
@@ -213,14 +213,14 @@ while True:
     else: 
         tools.send_speech("Where are you from?")
 
-tools.send_speech("That's great. A friend of mine was wondering about that, too.")
+tools.send_speech("That's great. A friend of mine was talking about that, too.")
 while True:
     k=input()
     if k=="1":
         tools.send_speech("Thanks for answering my question.")
         break
     else: 
-        tools.send_speech("That's grate.")
+        tools.send_speech("That's great.")
 
 tools.send_speech("Just to let you know, time's almost up.")
 while True:
@@ -259,8 +259,8 @@ while True:
     else: 
         tools.send_speech("Are you done?")
 
-tools.send_speech("Thanks for chatting with us!.")
-tools.send_speech("Tell the experimenter that the task has been completed.")
+tools.send_speech("Thanks for chatting with me!.")
+tools.send_speech("Now please tell the experimenter that the task has been completed.")
 while True:
     k=input()
     if k=="1":
