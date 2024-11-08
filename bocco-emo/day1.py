@@ -25,7 +25,7 @@ tools.send_speech("What did you eat today?")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("It looks so delicious.")
+        tools.send_speech("That sounds so delicious.")
         break
     if k=="2":
         tools.send_speech("You must be hungry.")
@@ -33,7 +33,7 @@ while True:
         tools.send_speech("What did you eat today?")
 
 tools.send_speech("I have some snacks for you on the table there.")
-tools.send_speech("Can I ask you to get that snack?")
+tools.send_speech("Can I ask you to get those snacks?")
 while True:
     k=input()
     if k=="1":
@@ -45,16 +45,14 @@ while True:
         #小学生レベルの英語で
         tools.send_speech("Bring that snacks here.")
 
-tools.send_speech("OK! Take that home and eat it.")
+tools.send_speech("OK! You can take that home and eat it.")
 while True:
-    k=input
-    tools.send_speec("Will you do it with me?")
     k=input()
     if k=="1":
         tools.send_speech("I have one task to do with you today.")
         break
     else: 
-        tools.send_speech("Will you do with me?")
+        tools.send_speech("Will you do a task with me?")
 
 tools.send_speech("First, I want you to get the blocks on the shelf behind you.")
 while True:
@@ -62,19 +60,19 @@ while True:
     if k=="1":
         tools.send_speech("Yes! That's it.")
         break
-    k=="2":
+    if k=="2":
         tools.send_speech("That's not it.")
     else: 
         tools.send_speech("I need you to bring me the blocks on that shelf.")
 
-tools.send_speech("That's your Bring it to your desk.")
+tools.send_speech("Please bring it to your desk.")
 while True:
     k=input()
     if k=="1":
         tools.send_speech("Today I want you to make an animal with these blocks.")
         break
     else: 
-        tools.send_speech("That's your Bring it to your desk.")
+        tools.send_speech("Please bring it to your desk.")
 
 tools.send_speech("Are you ready?")
 while True:
@@ -89,10 +87,10 @@ tools.send_speech("Now I'm going to ask you to use those blocks to make an anima
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("“Open the book on the block.")
+        tools.send_speech("Open the book on top of the block.")
         break
     else: 
-        tools.send_speech("Open the book on the brock box!")
+        tools.send_speech("Open the book on the block box!")
 
 tools.send_speech("Open the page with the yellow sticky note.")
 while True:
@@ -103,20 +101,20 @@ while True:
     else: 
         tools.send_speech("Open the page with the yellow sticky note.")
 
-tools.send_speech("I need you to make a giraffe out of blocks like that picture.")
+tools.send_speech("I need you to make a giraffe out of blocks like this picture.")
 while True:
     k=input()
     if k=="1":
         tools.send_speech("Are you ready?")
         break
     else: 
-        tools.send_speech("Can you make a giraffe out of blocks like in the picture?")
+        tools.send_speech("Can you make a giraffe out of blocks like the picture?")
 
 tools.send_speech("All right, let's begin.")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("Time is less than 15 minutes.")
+        tools.send_speech("Your time limit is 15 minutes.")
         break
     else: 
         tools.send_speech("Let's begin")
@@ -125,19 +123,19 @@ tools.send_speech("Does it look difficult?")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("I'm sure you're right. You can make as much as you can.")
+        tools.send_speech("I think so too. Just try to make it as same as you can.")
         break
     else: 
         tools.send_speech("Does it look difficult?")
 
-tools.send_speech("Looks good. I can't wait to see it.")
+tools.send_speech("Looking good. I can't wait to see it finished.")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("You're doing great. I'm looking forward to seeing it finished.")
+        tools.send_speech("You're doing great. I'm looking forward to seeing it when finished.")
         break
     else: 
-        tools.send_speech("Looks good.")
+        tools.send_speech("Looking good.")
 
 tools.send_speech("By the way, do you usually have a chance to speak English?")
 while True:
@@ -148,24 +146,23 @@ while True:
     else: 
         tools.send_speech("Do you often get to speak English?")
 
-tools.send_speech("By yhe way, Do you like animals?")
+tools.send_speech("Also, do you like animals?")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("What kind of animal do you like best?")
+        tools.send_speech("What kind of animal do you like the est?")
         break
-    k=="2":#動物が苦手な場合
+    if k=="2":#動物が苦手な場合
         tools.send_speech("I see.")
         break
     else: 
         tools.send_speech("Which animal is your favorite?")
 
-tools.send_speech(" Which of those animals are your least favorite?")
-")
+tools.send_speech(" Which is animal is your least favorite?")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("That's right!")
+        tools.send_speech("Oh really!")
         break
     else: 
         tools.send_speech("Which of those animals are your least favorite?")
@@ -178,13 +175,13 @@ while True:
         tools.send_speech("Thank you.")
         break
     else: 
-        tools.send_speech("I have a questions for you.")
+        tools.send_speech("I have a few questions for you.")
 
 tools.send_speech("What year are you in college?")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("That's good.")
+        tools.send_speech("Got it.")
         break
     else: 
         tools.send_speech("What year are you in college?")
@@ -198,11 +195,11 @@ while True:
     else: 
         tools.send_speech("What are you studying at the university?")
 
-tools.send_speech(" Is it hard to-study?")
+tools.send_speech(" Is it hard to study?")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("Yes, it is. ")
+        tools.send_speech("I hope you do well either way.")
         break
     else: 
         tools.send_speech("Is it hard to-study?")
@@ -216,14 +213,14 @@ while True:
     else: 
         tools.send_speech("Where are you from?")
 
-tools.send_speech("That's great. A friend of mine was wondering about that, too.")
+tools.send_speech("That's great. A friend of mine told me about that, too.")
 while True:
     k=input()
     if k=="1":
         tools.send_speech("Thanks for answering my question.")
         break
     else: 
-        tools.send_speech("That's grate.")
+        tools.send_speech("That's great.")
 
 tools.send_speech("Just to let you know, time's almost up.")
 while True:
@@ -235,14 +232,14 @@ while True:
         tools.send_speech("Time's almost up.")
 
 tools.send_speech("Is it done? Good job.")
-tools.send_speech("Now, will you bring the camera near the door?")
+tools.send_speech("Now, will you bring the camera near the door over here?")
 while True:
     k=input()
     if k=="1":
         tools.send_speech("OK! That's it!")
         break
     else: 
-        tools.send_speech("Bring the camera to the door!")
+        tools.send_speech("Bring the camera near the door over here!")
 
 tools.send_speech("Take a picture of your work with that camera.")
 while True:
@@ -251,7 +248,7 @@ while True:
         tools.send_speech("OK!")
         break
     else: 
-        tools.send_speech("Take a picture of your work.")
+        tools.send_speech("Please take a picture of your work.")
 
 tools.send_speech("Are you done?")
 while True:
@@ -262,7 +259,7 @@ while True:
     else: 
         tools.send_speech("Are you done?")
 
-tools.send_speech("Thanks for chatting with us!.")
+tools.send_speech("Thanks for chatting with me!.")
 tools.send_speech("Tell the experimenter that the task has been completed.")
 while True:
     k=input()
