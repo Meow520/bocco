@@ -128,11 +128,11 @@ while True:
     else: 
         tools.send_speech("Does it look difficult?")
 
-tools.send_speech("Looking good. I can't wait to see it finished.")
+tools.send_speech("Looking good.")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("You're doing great. I'm looking forward to seeing it when finished.")
+        tools.send_speech("I'm looking forward to seeing it when finished.")
         break
     else: 
         tools.send_speech("Looking good.")
