@@ -3,7 +3,7 @@ import json
 
 tools = BoccoTools()
 
-tools.send_speech("Hello.This is the second time we have met today. ")
+tools.send_speech("Hello.This is the second time we've met. ")
 tools.send_speech("My name is BOCCO.I would be happy if you call me BOCCO like before. Can I ask you a few more questions today?")
 while True:
     k=input()
@@ -22,25 +22,25 @@ while True:
     else: 
         tools.send_speech("How is the weather today?")
 
-tools.send_speech("Which seasons do you like the best?")
+tools.send_speech("Which season do you like the best?")
 while True:
     k=input()
     if k=="1":
         tools.send_speech("I like it too! There are so many fun events.")
         break
-    else":
-        tools.send_speech("Which seasons do you like the best?")
+    else:
+        tools.send_speech("Which season do you like the best?")
 
-tools.send_speech("I have tasks I need to do today, too. Will you do with me?")
+tools.send_speech("I have a task I need to do today, too. Will you do it with me?")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("First, I want you to get the block on the shelf.")
+        tools.send_speech("First, I want you to get the blocks on the shelf.")
         break
     else: 
-        tools.send_speech("I have tasks I need to do today.")
+        tools.send_speech("I have a task I need to do today.")
 
-tools.send_speech("This brock is the same as before.Open the page with the sticky note as you did last time.")
+tools.send_speech("This block is the same as before. Open the page with the sticky note as you did last time.")
 while True:
     k=input()
     if k=="1":
@@ -52,33 +52,33 @@ while True:
 tools.send_speech("OK! Let's start!")
 while True:
     k=input
-    tools.send_speec("I think tiday will be more difficult than last time.")
+    tools.send_speec("I think today will be more difficult than last time.")
     k=input()
     if k=="1":
         tools.send_speech("Let' start.")
         break
     else: 
-        tools.send_speech("Will you do with me?")
+        tools.send_speech("Will you do it with me?")
 
-tools.send_speech("Time is the same as before, 15 minitues.")
+tools.send_speech("Your time limit is the same as before, 15 minutes.")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("As much as you can do.")
+        tools.send_speech("Please finish as much as you can.")
         break
     else: 
-        tools.send_speech("Time is less than 15 minitues.")
+        tools.send_speech("Your time given is 15 minutes.")
 
-tools.send_speech("If it's difficult, you can change it to make it easier to make.")
+tools.send_speech("If it's difficult, you can change it so it is easier to make.")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("Answer questions as you work.")
+        tools.send_speech("Please answer questions as you work.")
         break
     else: 
         tools.send_speech("If it's hard, you can change it to make it easier.")
 
-tools.send_speech("Have you had a chance to speak English since you last spoke to me?")
+tools.send_speech("Have you had a chance to speak English since you last spoke with me?")
 while True:
     k=input()
     if k=="1":
@@ -91,19 +91,19 @@ tools.send_speech("Studying English is difficult, isn't it?")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("I have some recommendations for you to study!")
+        tools.send_speech("I have some recommendations for you on how to study!")
         break
     else: 
         tools.send_speech("Studying English is difficult, isn't it?")
 
-tools.send_speech("That means watching foreign dramas and movies.")
+tools.send_speech("That is watching foreign dramas and movies.")
 while True:
     k=input()
     if k=="1":
         tools.send_speech("It's important to be exposed to English on a regular basis.")
         break
     else: 
-        tools.send_speech("That means watching foreign dramas and movies.")
+        tools.send_speech("That is watching foreign dramas and movies.")
 
 tools.send_speech("Do you have the opportunity to watch English-language dramas and movies?")
 while True:
@@ -117,7 +117,7 @@ while True:
     else: 
         tools.send_speech("Can you watch English-language dramas and movies?")
 
-tools.send_speech("I recommend that you live a life in which you are exposed to English on a regular basis, as this will naturally improve your English.")
+tools.send_speech("I recommend that you live a life in which you are exposed to English daily, as this will naturally improve your English.")
 tools.send_speech("Also, listen to English songs!")
 tools.send_speech("What kind of artists do you like?")
 while True:
@@ -128,7 +128,7 @@ while True:
     else: 
         tools.send_speech("What kind of artists do you like?")
 
-tools.send_speech("Do you have favorite movie?")
+tools.send_speech("Do you have a favorite movie?")
 while True:
     k=input()
     if k=="1":
@@ -137,7 +137,7 @@ while True:
     else: 
         tools.send_speech("Do you have favorite movie?")
 
-tools.send_speech("Have you seen it?")
+tools.send_speech("Have you seen it before?")
 while True:
     k=input()
     if k=="1":#見たことあったら
@@ -149,7 +149,7 @@ while True:
     else: 
         tools.send_speech("Have you seen it?")
 
-tools.send_speech("If you rewatch the movie a few times, you'll get the English phrases in your head and be able to use them in your daily life!")
+tools.send_speech("If you rewatch the movie a few times, you'll get the English phrases in your head and may be able to use them in your daily life!")
 while True:
     k=input()
     if k=="1":
@@ -158,23 +158,23 @@ while True:
     else: 
         tools.send_speech("If you rewatch the movie a few times, you'll learn to speak English better.")
 
-tools.send_speech("Will the work be finished soon?")
+tools.send_speech("Will the blocks be finished soon?")
 while True:
     k=input()
     if k=="1":#もうすぐ終わる場合
         tools.send_speech("Looks good")
         break
-    k=="2":#まだ時間がかかる場合
+    if k=="2":#まだ時間がかかる場合
         tools.send_speech("Then I'll wait a little while longer.")
         break
     else: 
         tools.send_speech("Will the work be finished soon?")
 
-tools.send_speech("Let me know when you finish it.")
+tools.send_speech("Let me know when you finish building it.")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("OK! Thank you.")
+        tools.send_speech("Okay! Thank you.")
         break
     else: 
         tools.send_speech("Let me know when you finish it.")
@@ -183,28 +183,28 @@ tools.send_speech("You're doing very well today")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("Okay/")
+        tools.send_speech("Okay.")
         break
     else: 
         tools.send_speech("You're doing very well today")
 
-tools.send_speech("Can you do the same as before, and bring the camera near the entrance door?")
+tools.send_speech("Can you do the same as before, and bring the camera near the entrance door here?")
 while True:
     k=input()
     if k=="1":
         tools.send_speech("Yes, that's it!")
         break
     else: 
-        tools.send_speech("bring the camera!")
+        tools.send_speech("Please bring the camera here!")
 
-tools.send_speech("Take a picture of your work with that camera.")
+tools.send_speech("Take a picture of your work with this camera.")
 while True:
     k=input()
     if k=="1":
         tools.send_speech("That looks good!")
         break
     else: 
-        tools.send_speech("Take a picture of your work with that camera.")
+        tools.send_speech("Take a picture of your work with this camera.")
 
 tools.send_speech("Tell the experimenter that the task has been completed.")
 while True:

@@ -128,8 +128,19 @@ while True:
     else: 
         tools.send_speech("Does it look difficult?")
 
+<<<<<<< HEAD
 tools.send_speech("Looking good. I can't wait to see it finished.")
 
+=======
+tools.send_speech("Looking good.")
+while True:
+    k=input()
+    if k=="1":
+        tools.send_speech("I'm looking forward to seeing it when finished.")
+        break
+    else: 
+        tools.send_speech("Looking good.")
+>>>>>>> 4c67a012a5f6b6e19ed66970602c93d6ec652586
 
 tools.send_speech("By the way, do you usually have a chance to speak English?")
 while True:
