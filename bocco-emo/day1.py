@@ -129,13 +129,7 @@ while True:
         tools.send_speech("Does it look difficult?")
 
 tools.send_speech("Looking good. I can't wait to see it finished.")
-while True:
-    k=input()
-    if k=="1":
-        tools.send_speech("You're doing great. I'm looking forward to seeing it when finished.")
-        break
-    else: 
-        tools.send_speech("Looking good.")
+
 
 tools.send_speech("By the way, do you usually have a chance to speak English?")
 while True:
@@ -150,22 +144,22 @@ tools.send_speech("Also, do you like animals?")
 while True:
     k=input()
     if k=="1":
-        tools.send_speech("What kind of animal do you like the est?")
+        tools.send_speech("Oh, Yes!")
         break
     if k=="2":#動物が苦手な場合
         tools.send_speech("I see.")
         break
     else: 
-        tools.send_speech("Which animal is your favorite?")
+        tools.send_speech("do you like animals?")
 
-tools.send_speech(" Which is animal is your least favorite?")
+tools.send_speech(" What kind of animal do you like the best?")
 while True:
     k=input()
     if k=="1":
         tools.send_speech("Oh really!")
         break
     else: 
-        tools.send_speech("Which of those animals are your least favorite?")
+        tools.send_speech("What kind of animal do you like the best?")
 
 
 tools.send_speech("Can I ask you a few questions while you work?")
@@ -213,7 +207,17 @@ while True:
     else: 
         tools.send_speech("Where are you from?")
 
-tools.send_speech("That's great. A friend of mine told me about that, too.")
+
+tools.send_speech("Is there anything famous there?")
+while True:
+    k=input()
+    if k=="1":
+        tools.send_speech("That's grate.")
+        break
+    else: 
+        tools.send_speech("Is there anything famous there?")
+
+tools.send_speech(" A friend of mine told me about that, too.")
 while True:
     k=input()
     if k=="1":
